@@ -4,7 +4,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/liatrio/backstage-github-autogov-plugin.git"
+    "url": "git+https://github.com/liatrio/backstage-github-autogov-plugin.git"
   },
   "license": "MIT",
   "devDependencies": {
