@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: backstage-github-releases-autogov-plugin
+  name: backstage-github-autogov-plugin
   annotations:
-    github.com/project-slug: liatrio/backstage-github-releases-autogov-plugin
+    github.com/project-slug: liatrio/backstage-github-autogov-plugin
 spec:
   type: other
   lifecycle: in-progress

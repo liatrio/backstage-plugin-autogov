@@ -1,10 +1,10 @@
 {
-  "name": "@liatrio/backstage-github-releases-autogov-plugin",
+  "name": "@liatrio/backstage-github-autogov-plugin",
   "version": "0.1.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/liatrio/backstage-github-releases-autogov-plugin.git"
+    "url": "https://github.com/liatrio/backstage-github-autogov-plugin.git"
   },
   "license": "MIT",
   "devDependencies": {
