@@ -1,0 +1,19 @@
+.DS_Store
+
+# Ignore build output directories
+node_modules/
+dist
+build/
+dist-types
+coverage
+# Ignore TypeScript build info files
+*.tsbuildinfo
+# Ignore TypeScript declaration files
+*.d.ts
+# Local environment variables
+.env
+# Built files
+*.tgz
+
+# Ignore npm lock files
+**/package-lock.json

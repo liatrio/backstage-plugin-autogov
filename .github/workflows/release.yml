@@ -1,0 +1,60 @@
+name: "Release"
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "CHANGELOG.md"
+      - "README.md"
+
+jobs:
+  code-validation:
+    uses: ./.github/workflows/code_validation.yml
+
+  release:
+    needs: [code-validation]
+    runs-on: ubuntu-latest
+    concurrency: release
+
+    permissions:
+      id-token: write
+      contents: write
+      issues: write
+      pull-requests: write
+      packages: write
+
+    env:
+      HUSKY: 0
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: |
+          yarn install
+
+      - name: Build Typescript Definitions
+        run: |
+          yarn tsc
+
+      - name: Build
+        run: |
+          yarn build
+
+      - name: Configure npm authentication
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+
+      - name: Bump and Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release

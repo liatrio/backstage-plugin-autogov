@@ -1,0 +1,16 @@
+{
+  "extends": "@backstage/cli/config/tsconfig.json",
+  "include": [
+    "backstage-plugin-github-releases-assets-backend/src",
+    "backstage-plugin-github-releases-autogov/src"
+  ],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "outDir": "dist-types",
+    "rootDir": ".",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
+  }
+}
