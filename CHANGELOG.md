@@ -1,3 +1,14 @@
+## [1.1.0](https://github.com/liatrio/backstage-github-autogov-plugin/compare/v1.0.1...v1.1.0) (2024-11-06)
+
+### Features
+
+* add base logic ([236d841](https://github.com/liatrio/backstage-github-autogov-plugin/commit/236d84167cbcb98abe4b1f9ca80239cc611297b2))
+* add packaging configuration ([b81198a](https://github.com/liatrio/backstage-github-autogov-plugin/commit/b81198a96390fac9feeabbadbfa076e5ec987976))
+
+### Bug Fixes
+
+* prettier fixes ([34d63c3](https://github.com/liatrio/backstage-github-autogov-plugin/commit/34d63c38b01ec3034ec6b7d517a238c60d723a9a))
+
 ## [1.0.1](https://github.com/liatrio/backstage-github-autogov-plugin/compare/v1.0.0...v1.0.1) (2024-10-17)
 
 ### Bug Fixes
