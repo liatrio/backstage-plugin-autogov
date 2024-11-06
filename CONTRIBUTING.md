@@ -2,19 +2,13 @@
 
 ## Local Testing
 
-1. install dependencies
-
-```zsh
-# at root of repo
-yarn install
-yarn tsc
-```
-
-2. build & package the plugins
+1. build & package the plugins
 
 > build & package individually for isolated local testing
 
 ```zsh
+yarn install
+yarn tsc
 cd backstage-plugin-github-releases-autogov
 yarn build
 yarn pack
@@ -22,6 +16,8 @@ yarn pack
 
 ```zsh
 cd ..
+yarn install
+yarn tsc
 cd backstage-plugin-github-releases-assets-backend
 yarn build
 yarn pack
@@ -33,7 +29,7 @@ backend.add(
 );
 ```
 
-3. Add the plugins to a local Backstage instance
+2. Add the plugins to a local Backstage instance
 
 ```zsh
 cd packages/backend
