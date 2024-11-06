@@ -1,13 +1,13 @@
 import {
   coreServices,
   createBackendModule,
-} from '@backstage/backend-plugin-api';
-import { catalogProcessingExtensionPoint } from '@backstage/plugin-catalog-node/alpha';
-import { AutogovProcessor } from './processor';
+} from "@backstage/backend-plugin-api";
+import { catalogProcessingExtensionPoint } from "@backstage/plugin-catalog-node/alpha";
+import { AutogovProcessor } from "./processor";
 
 export const catalogModuleAutogovProcessor = createBackendModule({
-  pluginId: 'catalog',
-  moduleId: 'autogov-processor',
+  pluginId: "catalog",
+  moduleId: "autogov-processor",
   register(reg) {
     reg.registerInit({
       deps: {
@@ -16,7 +16,7 @@ export const catalogModuleAutogovProcessor = createBackendModule({
         logger: coreServices.logger,
       },
       async init({ catalog, config, logger }) {
-        logger.info('Initializing Autogov Processor');
+        logger.info("Initializing Autogov Processor");
         catalog.addProcessor(
           AutogovProcessor.fromConfig(config, {
             logger,
