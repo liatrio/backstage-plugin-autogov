@@ -2,7 +2,17 @@
 
 ## Local Testing
 
-1. build & package the plugins
+1. install dependencies
+
+```zsh
+# at root of repo
+yarn install
+yarn tsc
+```
+
+2. build & package the plugins
+
+> build & package individually for isolated local testing
 
 ```zsh
 cd backstage-plugin-github-releases-autogov
@@ -23,16 +33,20 @@ backend.add(
 );
 ```
 
-2. Add the plugins to a local Backstage instance
+3. Add the plugins to a local Backstage instance
 
 ```zsh
 cd packages/backend
-yarn add @liatrio/backstage-plugin-github-releases-assets-backend
+yarn add <local-path-to-repo>backstage-github-autogov-plugin/backstage-plugin-github-releases-autogov/liatrio-backstage-plugin-github-releases-assets-backend-<current-version>.tgz
+## or run
+yarn --cwd packages/backend <local-path-to-repo>backstage-github-autogov-plugin/backstage-plugin-github-releases-autogov/liatrio-backstage-plugin-github-releases-assets-backend-<current-version>.tgz
 ```
 
 ```zsh
 cd packages/app
-yarn add @liatrio/backstage-plugin-github-releases-autogov
+yarn add <local-path-to-repo>backstage-github-autogov-plugin/backstage-plugin-github-releases-autogov/liatrio-backstage-plugin-github-releases-autogov-<current-version>.tgz
+## or run
+yarn --cwd packages/app <local-path-to-repo>backstage-github-autogov-plugin/backstage-plugin-github-releases-autogov/liatrio-backstage-plugin-github-releases-autogov<current-version>.tgz
 ```
 
 ```packages/app/src/components/catalog/EntityPage.tsx
