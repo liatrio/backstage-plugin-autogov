@@ -11,7 +11,9 @@
     "types": "dist/index.d.ts"
   },
   "backstage": {
-    "role": "frontend-plugin"
+    "role": "frontend-plugin",
+    "pluginId": "autogov-common",
+    "pluginPackages": []
   },
   "sideEffects": false,
   "scripts": {
