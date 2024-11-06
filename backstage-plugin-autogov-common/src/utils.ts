@@ -1,4 +1,4 @@
-import { AUTOGOV_STATUSES, AUTOGOV_STATUS_WEIGHT } from './constants';
+import { AUTOGOV_STATUSES, AUTOGOV_STATUS_WEIGHT } from "./constants";
 
 export const getAutogovStatusWeight = (
   status: string,
