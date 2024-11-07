@@ -1,3 +1,9 @@
+## [1.2.4](https://github.com/liatrio/backstage-github-autogov-plugin/compare/v1.2.3...v1.2.4) (2024-11-07)
+
+### Bug Fixes
+
+* autogov pacakage.json ([9b523d0](https://github.com/liatrio/backstage-github-autogov-plugin/commit/9b523d0e7fb463215c931ea40f52212387cc0f93))
+
 ## [1.2.3](https://github.com/liatrio/backstage-github-autogov-plugin/compare/v1.2.2...v1.2.3) (2024-11-07)
 
 ### Bug Fixes
