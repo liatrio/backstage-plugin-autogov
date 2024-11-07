@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/liatrio/backstage-github-autogov-plugin/compare/v1.2.1...v1.2.2) (2024-11-07)
+
+### Bug Fixes
+
+* add autogov-common to workspace ([274501c](https://github.com/liatrio/backstage-github-autogov-plugin/commit/274501ca43d0067e965c3db45e6c088a2f0653dc))
+
 ## [1.2.1](https://github.com/liatrio/backstage-github-autogov-plugin/compare/v1.2.0...v1.2.1) (2024-11-07)
 
 ### Bug Fixes
