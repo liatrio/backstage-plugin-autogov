@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/liatrio/backstage-github-autogov-plugin/compare/v1.2.0...v1.2.1) (2024-11-07)
+
+### Bug Fixes
+
+* bump global package json version ([894c6a2](https://github.com/liatrio/backstage-github-autogov-plugin/commit/894c6a29d937f5535c3230bcec9f1e90360b6a8d))
+* formatting for prettier ([e03fbbf](https://github.com/liatrio/backstage-github-autogov-plugin/commit/e03fbbf79940fcea57b49501574f0778e9908f9d))
+
 ## [1.2.0](https://github.com/liatrio/backstage-github-autogov-plugin/compare/v1.1.0...v1.2.0) (2024-11-07)
 
 ### Features
