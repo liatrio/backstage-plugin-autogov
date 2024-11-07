@@ -18,6 +18,7 @@
     "conventional-changelog-conventionalcommits": "^8.0.0"
   },
   "workspaces": [
+    "backstage-plugin-autogov-common",
     "backstage-plugin-github-releases-assets-backend",
     "backstage-plugin-github-releases-autogov"
   ],
@@ -29,7 +30,7 @@
     "build": "backstage-cli repo build --all",
     "lint": "backstage-cli repo lint",
     "lint:all": "yarn lint && yarn prettier:check",
-    "test:all": "yarn --cwd backstage-plugin-github-releases-autogov test --no-watch && yarn --cwd backstage-plugin-github-releases-assets-backend test --no-watch",
+    "test:all": "yarn --cwd backstage-plugin-github-releases-autogov test --no-watch && yarn --cwd backstage-plugin-github-releases-assets-backend test --no-watch && yarn --cwd backstage-plugin-autogov-common test --no-watch",
     "prettier:check": "npx --yes prettier --check .",
     "prettier:fix": "npx --yes prettier --write .",
     "tsc:full": "tsc --skipLibCheck true --incremental false",
