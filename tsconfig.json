@@ -5,9 +5,7 @@
     "backstage-plugin-github-releases-assets-backend/src",
     "backstage-plugin-github-releases-autogov/src"
   ],
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "outDir": "dist-types",
     "rootDir": ".",
