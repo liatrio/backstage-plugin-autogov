@@ -15,12 +15,12 @@
     "@semantic-release/github": "^9.2.6",
     "@semantic-release/npm": "^11.0.3",
     "@semantic-release/release-notes-generator": "^12.1.0",
-    "conventional-changelog-conventionalcommits": "^8.0.0"
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "lerna": "^8.1.9",
+    "typescript": "^5.6.3"
   },
   "workspaces": [
-    "backstage-plugin-autogov-common",
-    "backstage-plugin-github-releases-assets-backend",
-    "backstage-plugin-github-releases-autogov"
+    "backstage-plugin-*"
   ],
   "dependencies": {
     "husky": "^9.1.6",
@@ -30,12 +30,13 @@
     "build": "backstage-cli repo build --all",
     "lint": "backstage-cli repo lint",
     "lint:all": "yarn lint && yarn prettier:check",
-    "test:all": "yarn --cwd backstage-plugin-github-releases-autogov test --no-watch && yarn --cwd backstage-plugin-github-releases-assets-backend test --no-watch && yarn --cwd backstage-plugin-autogov-common test --no-watch",
+    "install:all:local": "yarn --cwd backstage-plugin-autogov-common install --immutable && yarn --cwd backstage-plugin-github-releases-assets-backend install --immutable && yarn --cwd backstage-plugin-github-releases-autogov install --immutable",
+    "test:all": "yarn install:all:local && yarn tsc:full && yarn --cwd backstage-plugin-autogov-common test --all --no-watch && yarn --cwd backstage-plugin-github-releases-assets-backend test --all --no-watch && yarn --cwd backstage-plugin-github-releases-autogov test --all --no-watch",
     "prettier:check": "npx --yes prettier --check .",
     "prettier:fix": "npx --yes prettier --write .",
     "tsc:full": "tsc --skipLibCheck true --incremental false",
     "prepare": "husky",
     "clean": "backstage-cli repo clean"
   },
-  "packageManager": "yarn@4.5.1"
+  "packageManager": "yarn@4.4.1"
 }

@@ -3,7 +3,7 @@ import { LoggerService } from "@backstage/backend-plugin-api";
 import { Config } from "@backstage/config";
 import express from "express";
 
-import Router from "express-promise-router";
+import expressRouter from "express-promise-router";
 import fetch from "node-fetch";
 
 export interface RouterOptions {
@@ -16,7 +16,7 @@ export async function createRouter(
 ): Promise<express.Router> {
   const { logger, config } = options;
 
-  const router = Router();
+  const router = expressRouter();
   router.use(express.json());
 
   router.get("/health", (_, response) => {

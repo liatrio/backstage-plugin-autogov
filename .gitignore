@@ -6,8 +6,8 @@ dist
 build/
 dist-types
 coverage
-.yarn/*
-*/.yarn/*
+.yarn/*.gz
+*/.yarn/*.gz
 # Ignore TypeScript build info files
 *.tsbuildinfo
 # Ignore TypeScript declaration files
