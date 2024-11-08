@@ -74,7 +74,7 @@ jobs:
         run: yarn install
 
       - name: Typescript Check
-        run: yarn tsc:all
+        run: yarn tsc:full
 
       - name: Build
         run: yarn build
