@@ -4,6 +4,7 @@ words:
   - testid
   - uuidv
   - cyclonedx
+  - npmjs
 dictionaries:
   - aws
   - companies
