@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.2.0...v1.2.1) (2024-11-08)
+
+### Bug Fixes
+
+* switch to npmjs ([#9](https://github.com/liatrio/backstage-plugin-autogov/issues/9)) ([d1563bc](https://github.com/liatrio/backstage-plugin-autogov/commit/d1563bc81a9c3f2942794fe4f0ad33442e01265d))
+
 ## [1.2.0](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.1.1...v1.2.0) (2024-11-08)
 
 ### Features
