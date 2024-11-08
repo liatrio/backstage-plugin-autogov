@@ -23,7 +23,7 @@
     "packages/*"
   ],
   "scripts": {
-    "buildnew": "lerna run tsc:full && lerna run build",
+    "build": "lerna run tsc:full && lerna run build",
     "lint": "backstage-cli repo lint",
     "lint:all": "yarn lint && yarn prettier:check",
     "test": "CI=true lerna --scope '@liatrio/*' run test",
