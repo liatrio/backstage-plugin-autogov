@@ -3,6 +3,7 @@ words:
   - Liatrio
   - testid
   - uuidv
+  - cyclonedx
 dictionaries:
   - aws
   - companies
