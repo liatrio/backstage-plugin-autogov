@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-plugin-autogov
+  annotations:
+    github.com/project-slug: liatrio/backstage-plugin-autogov
+spec:
+  type: other
+  lifecycle: in-progress
+  owner: backstage-foundations
