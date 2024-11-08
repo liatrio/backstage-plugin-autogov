@@ -1,3 +1,9 @@
+## [1.3.1](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.3.0...v1.3.1) (2024-11-08)
+
+### Bug Fixes
+
+* add plugin.ts to index.ts exports for autogov common ([dfdb412](https://github.com/liatrio/backstage-plugin-autogov/commit/dfdb4123e30aab4369c8ea59e95950fd1f7fa779))
+
 ## [1.3.0](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.2.2...v1.3.0) (2024-11-08)
 
 ### Features
