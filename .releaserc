@@ -28,24 +28,8 @@
       {
         "npmPublish": true,
         "pkgRoot": "packages/backstage-plugin-autogov-common",
-        "registry": "https://npm.pkg.github.com/"
+        "registry": "https://registry.npmjs.org/"
       }
     ],
-    [
-      "@semantic-release/npm",
-      {
-        "npmPublish": true,
-        "pkgRoot": "packages/backstage-plugin-backend-module-autogov-processor",
-        "registry": "https://npm.pkg.github.com/"
-      }
-    ],
-    [
-      "@semantic-release/npm",
-      {
-        "npmPublish": true,
-        "pkgRoot": "packages/backstage-plugin-autogov-status-catalog-column",
-        "registry": "https://npm.pkg.github.com/"
-      }
-    ]
   ]
 }

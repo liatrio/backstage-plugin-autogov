@@ -18,7 +18,7 @@
     ]
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
+    "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "sideEffects": false,
@@ -43,7 +43,7 @@
     "@backstage/integration": "^1.15.1",
     "@backstage/plugin-catalog-node": "^1.13.1",
     "@backstage/types": "^1.1.1",
-    "@liatrio/backstage-plugin-autogov-common": "^v1",
+    "@liatrio/backstage-plugin-autogov-common": "^1",
     "node-fetch": "2"
   },
   "devDependencies": {

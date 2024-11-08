@@ -1,4 +1,4 @@
-# @internal/backstage-plugin-catalog-backend-module-autogov-processor
+# @liatrio/backstage-plugin-backend-module-autogov-processor
 
 The autogov-processor backend module for the catalog plugin.
 
