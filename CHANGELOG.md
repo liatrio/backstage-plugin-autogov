@@ -1,3 +1,9 @@
+## [1.3.2](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.3.1...v1.3.2) (2024-11-08)
+
+### Bug Fixes
+
+* move constants to processor ([#13](https://github.com/liatrio/backstage-plugin-autogov/issues/13)) ([50e285e](https://github.com/liatrio/backstage-plugin-autogov/commit/50e285e402499e0c64433850a5e3dd32769587d0))
+
 ## [1.3.1](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.3.0...v1.3.1) (2024-11-08)
 
 ### Bug Fixes
