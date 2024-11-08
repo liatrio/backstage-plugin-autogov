@@ -1,11 +1,6 @@
 {
   "extends": "@backstage/cli/config/tsconfig.json",
-  "include": [
-    "packages/*/src"
-    // "backstage-plugin-autogov-common/src",
-    // "backstage-plugin-github-releases-assets-backend/src",
-    // "backstage-plugin-github-releases-autogov/src"
-  ],
+  "include": ["packages/*/src"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "outDir": "dist-types",
