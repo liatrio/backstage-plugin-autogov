@@ -30,6 +30,6 @@
         "pkgRoot": "packages/backstage-plugin-autogov-common",
         "registry": "https://registry.npmjs.org/"
       }
-    ],
+    ]
   ]
 }
