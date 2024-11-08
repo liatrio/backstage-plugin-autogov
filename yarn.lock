@@ -3349,6 +3349,48 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/plugin-catalog@npm:^1.24.0":
+  version: 1.24.0
+  resolution: "@backstage/plugin-catalog@npm:1.24.0"
+  dependencies:
+    "@backstage/catalog-client": "npm:^1.7.1"
+    "@backstage/catalog-model": "npm:^1.7.0"
+    "@backstage/core-compat-api": "npm:^0.3.1"
+    "@backstage/core-components": "npm:^0.15.1"
+    "@backstage/core-plugin-api": "npm:^1.10.0"
+    "@backstage/errors": "npm:^1.2.4"
+    "@backstage/frontend-plugin-api": "npm:^0.9.0"
+    "@backstage/integration-react": "npm:^1.2.0"
+    "@backstage/plugin-catalog-common": "npm:^1.1.0"
+    "@backstage/plugin-catalog-react": "npm:^1.14.0"
+    "@backstage/plugin-permission-react": "npm:^0.4.27"
+    "@backstage/plugin-scaffolder-common": "npm:^1.5.6"
+    "@backstage/plugin-search-common": "npm:^1.2.14"
+    "@backstage/plugin-search-react": "npm:^1.8.1"
+    "@backstage/types": "npm:^1.1.1"
+    "@material-ui/core": "npm:^4.12.2"
+    "@material-ui/icons": "npm:^4.9.1"
+    "@material-ui/lab": "npm:4.0.0-alpha.61"
+    "@mui/utils": "npm:^5.14.15"
+    dataloader: "npm:^2.0.0"
+    expiry-map: "npm:^2.0.0"
+    history: "npm:^5.0.0"
+    lodash: "npm:^4.17.21"
+    pluralize: "npm:^8.0.0"
+    react-use: "npm:^17.2.4"
+    zen-observable: "npm:^0.10.0"
+  peerDependencies:
+    "@types/react": ^16.13.1 || ^17.0.0 || ^18.0.0
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-router-dom: 6.0.0-beta.0 || ^6.3.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/f1e3d9c07718b38b8dbc06eb9374a074bfd1f5b5f651394fff1c321e5ed51968d665115e671b63b370923dd65c683990a9ecacb9c455163ddc0aa265cdc48d85
+  languageName: node
+  linkType: hard
+
 "@backstage/plugin-events-node@npm:^0.4.2":
   version: 0.4.4
   resolution: "@backstage/plugin-events-node@npm:0.4.4"
@@ -3416,6 +3458,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/plugin-scaffolder-common@npm:^1.5.6":
+  version: 1.5.6
+  resolution: "@backstage/plugin-scaffolder-common@npm:1.5.6"
+  dependencies:
+    "@backstage/catalog-model": "npm:^1.7.0"
+    "@backstage/plugin-permission-common": "npm:^0.8.1"
+    "@backstage/types": "npm:^1.1.1"
+  checksum: 10c0/fd969976c04ade4d9da63e8e0c687d28f52ee39b2ad81f338bb0c9d9903c849f650b25c5796c568455fe083df2d7d21be30f5423045e5d9f58490d3e77a1bdb3
+  languageName: node
+  linkType: hard
+
 "@backstage/plugin-search-common@npm:^1.2.14":
   version: 1.2.14
   resolution: "@backstage/plugin-search-common@npm:1.2.14"
@@ -3423,6 +3476,35 @@ __metadata:
     "@backstage/plugin-permission-common": "npm:^0.8.1"
     "@backstage/types": "npm:^1.1.1"
   checksum: 10c0/7b73403f548e9a77dbeea087f745bbb40024a16865daac33245ad9cac1c00ba61e20545d6421747236fd54534561254709352e1e26ac1f3412e774e00992e21e
+  languageName: node
+  linkType: hard
+
+"@backstage/plugin-search-react@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "@backstage/plugin-search-react@npm:1.8.1"
+  dependencies:
+    "@backstage/core-components": "npm:^0.15.1"
+    "@backstage/core-plugin-api": "npm:^1.10.0"
+    "@backstage/frontend-plugin-api": "npm:^0.9.0"
+    "@backstage/plugin-search-common": "npm:^1.2.14"
+    "@backstage/theme": "npm:^0.6.0"
+    "@backstage/types": "npm:^1.1.1"
+    "@backstage/version-bridge": "npm:^1.0.10"
+    "@material-ui/core": "npm:^4.12.2"
+    "@material-ui/icons": "npm:^4.9.1"
+    "@material-ui/lab": "npm:4.0.0-alpha.61"
+    lodash: "npm:^4.17.21"
+    qs: "npm:^6.9.4"
+    react-use: "npm:^17.3.2"
+  peerDependencies:
+    "@types/react": ^16.13.1 || ^17.0.0 || ^18.0.0
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-router-dom: 6.0.0-beta.0 || ^6.3.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/224580f50af2d24223477f55bb858ca32624ff6057dc8594ce46a0157484a35e945f2e9663cf7285669f806061f3b7ed193102449d17f63dcb2db25d5d0ed972
   languageName: node
   linkType: hard
 
@@ -4759,7 +4841,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@liatrio/backstage-plugin-autogov-common@npm:^v1, @liatrio/backstage-plugin-autogov-common@workspace:packages/backstage-plugin-autogov-common":
+"@liatrio/backstage-plugin-autogov-common@npm:^1.0.0, @liatrio/backstage-plugin-autogov-common@npm:^v1, @liatrio/backstage-plugin-autogov-common@workspace:packages/backstage-plugin-autogov-common":
   version: 0.0.0-use.local
   resolution: "@liatrio/backstage-plugin-autogov-common@workspace:packages/backstage-plugin-autogov-common"
   dependencies:
@@ -4786,6 +4868,35 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@liatrio/backstage-plugin-autogov-status-catalog-column@workspace:packages/backstage-plugin-autogov-status-catalog-column":
+  version: 0.0.0-use.local
+  resolution: "@liatrio/backstage-plugin-autogov-status-catalog-column@workspace:packages/backstage-plugin-autogov-status-catalog-column"
+  dependencies:
+    "@backstage/catalog-model": "npm:^1.7.0"
+    "@backstage/cli": "npm:^0.27.1"
+    "@backstage/core-app-api": "npm:^1.15.0"
+    "@backstage/core-components": "npm:^0.15.0"
+    "@backstage/core-plugin-api": "npm:^1.9.4"
+    "@backstage/dev-utils": "npm:^1.1.0"
+    "@backstage/plugin-catalog": "npm:^1.24.0"
+    "@backstage/plugin-catalog-react": "npm:^1.14.0"
+    "@backstage/test-utils": "npm:^1.6.0"
+    "@backstage/theme": "npm:^0.5.7"
+    "@liatrio/backstage-plugin-autogov-common": "npm:^1.0.0"
+    "@liatrio/backstage-plugin-backend-module-autogov-processor": "npm:^1.0.0"
+    "@material-ui/core": "npm:^4.9.13"
+    "@material-ui/icons": "npm:^4.9.1"
+    "@material-ui/lab": "npm:^4.0.0-alpha.61"
+    "@testing-library/jest-dom": "npm:^6.0.0"
+    "@testing-library/react": "npm:^14.0.0"
+    "@testing-library/user-event": "npm:^14.0.0"
+    react: "npm:^16.13.1 || ^17.0.0 || ^18.0.0"
+    react-use: "npm:^17.2.4"
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+  languageName: unknown
+  linkType: soft
+
 "@liatrio/backstage-plugin-autogov@workspace:.":
   version: 0.0.0-use.local
   resolution: "@liatrio/backstage-plugin-autogov@workspace:."
@@ -4803,6 +4914,22 @@ __metadata:
     typescript: "npm:^5.6.3"
   languageName: unknown
   linkType: soft
+
+"@liatrio/backstage-plugin-backend-module-autogov-processor@npm:^1.0.0":
+  version: 1.1.1
+  resolution: "@liatrio/backstage-plugin-backend-module-autogov-processor@npm:1.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40liatrio%2Fbackstage-plugin-backend-module-autogov-processor%2F1.1.1%2F44110913232ec4595e9a14ca00289c0d4f91c402"
+  dependencies:
+    "@backstage/backend-plugin-api": "npm:^1.0.0"
+    "@backstage/catalog-model": "npm:^1.7.0"
+    "@backstage/config": "npm:^1.2.0"
+    "@backstage/integration": "npm:^1.15.1"
+    "@backstage/plugin-catalog-node": "npm:^1.13.1"
+    "@backstage/types": "npm:^1.1.1"
+    "@liatrio/backstage-plugin-autogov-common": "npm:^v1"
+    node-fetch: "npm:2"
+  checksum: 10c0/2f466df1e40d6060e97a9dd0caf98d7e8e6756800df9b20beae7bd099dcec17c71c5e7bd2f6380e7b09ca7c2df4a3b570c5ce53c4a2f8a95da34f77b254c0f35
+  languageName: node
+  linkType: hard
 
 "@liatrio/backstage-plugin-backend-module-autogov-processor@workspace:packages/backstage-plugin-backend-module-autogov-processor":
   version: 0.0.0-use.local
@@ -5377,7 +5504,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/utils@npm:^5.16.6":
+"@mui/utils@npm:^5.14.15, @mui/utils@npm:^5.16.6":
   version: 5.16.6
   resolution: "@mui/utils@npm:5.16.6"
   dependencies:
@@ -12274,6 +12401,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dataloader@npm:^2.0.0":
+  version: 2.2.2
+  resolution: "dataloader@npm:2.2.2"
+  checksum: 10c0/125ec69f821478cf7c6b4360095db6cab939fe57876a0d2060c428091a8deee7152345189923b71a6afa694aaec463779f34b585317164016fd6f54f52cd94ba
+  languageName: node
+  linkType: hard
+
 "date-fns@npm:^2.16.1":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
@@ -14018,6 +14152,15 @@ __metadata:
     jest-message-util: "npm:^29.7.0"
     jest-util: "npm:^29.7.0"
   checksum: 10c0/2eddeace66e68b8d8ee5f7be57f3014b19770caaf6815c7a08d131821da527fb8c8cb7b3dcd7c883d2d3d8d184206a4268984618032d1e4b16dc8d6596475d41
+  languageName: node
+  linkType: hard
+
+"expiry-map@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "expiry-map@npm:2.0.0"
+  dependencies:
+    map-age-cleaner: "npm:^0.2.0"
+  checksum: 10c0/40105fe487a1c2992289033c562f5e2f6d6b9fbd5d27f3ec352d00733b90a3e2bba5e99dbe7f5e731678f9469bc809d080c69f172bc85185b6defb5831bf9ac2
   languageName: node
   linkType: hard
 
@@ -18935,6 +19078,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"map-age-cleaner@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "map-age-cleaner@npm:0.2.0"
+  dependencies:
+    p-defer: "npm:^1.0.0"
+  checksum: 10c0/1753d287dab87da0681e3a16afc5e61bdc80fe680df25192fc347242511313cf40fa01e1fa43f3dd3bd00fb182a82f020f447ca5bbf7bab3154d9f1bc364d7ac
+  languageName: node
+  linkType: hard
+
 "map-obj@npm:^1.0.0":
   version: 1.0.1
   resolution: "map-obj@npm:1.0.1"
@@ -21126,6 +21278,13 @@ __metadata:
   version: 1.4.3
   resolution: "outvariant@npm:1.4.3"
   checksum: 10c0/5976ca7740349cb8c71bd3382e2a762b1aeca6f33dc984d9d896acdf3c61f78c3afcf1bfe9cc633a7b3c4b295ec94d292048f83ea2b2594fae4496656eba992c
+  languageName: node
+  linkType: hard
+
+"p-defer@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "p-defer@npm:1.0.0"
+  checksum: 10c0/ed603c3790e74b061ac2cb07eb6e65802cf58dce0fbee646c113a7b71edb711101329ad38f99e462bd2e343a74f6e9366b496a35f1d766c187084d3109900487
   languageName: node
   linkType: hard
 
