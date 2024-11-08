@@ -42,7 +42,6 @@ jobs:
       - name: Install dependencies
         run: |
           yarn install
-          yarn install:all:local
 
       - name: Build Typescript Definitions
         run: |
