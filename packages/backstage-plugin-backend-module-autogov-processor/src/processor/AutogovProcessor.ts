@@ -26,11 +26,23 @@ import {
 import { durationToMilliseconds, HumanDuration } from "@backstage/types";
 import fetch from "node-fetch";
 
-import {
-  AUTOGOV_STATUS_FILE_ANNOTATION,
-  AUTOGOV_STATUS_ANNOTATION,
-  AUTOGOV_STATUSES,
-} from "@liatrio/backstage-plugin-autogov-common";
+export const AUTOGOV_STATUS_FILE_ANNOTATION = "liatrio.com/autogov-result-file";
+export const AUTOGOV_STATUS_ANNOTATION =
+  "liatrio.com/autogov-latest-release-status";
+
+export enum AUTOGOV_STATUSES {
+  PASSED = "PASSED",
+  FAILED = "FAILED",
+  N_A = "N/A",
+  ERROR = "ERROR",
+}
+
+export enum AUTOGOV_STATUS_WEIGHT {
+  PASSED = 1,
+  FAILED = 2,
+  N_A = 3,
+  UNKNOWN = 4,
+}
 
 export type ShouldProcessEntity = (entity: Entity) => boolean;
 

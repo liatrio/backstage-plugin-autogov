@@ -27,14 +27,6 @@
       "@semantic-release/npm",
       {
         "npmPublish": true,
-        "pkgRoot": "packages/backstage-plugin-autogov-common",
-        "registry": "https://registry.npmjs.org/"
-      }
-    ],
-    [
-      "@semantic-release/npm",
-      {
-        "npmPublish": true,
         "pkgRoot": "packages/backstage-plugin-backend-module-autogov-processor",
         "registry": "https://registry.npmjs.org/"
       }
