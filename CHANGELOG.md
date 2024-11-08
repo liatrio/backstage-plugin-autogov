@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.2.1...v1.2.2) (2024-11-08)
+
+### Bug Fixes
+
+* new npmjs token ([#10](https://github.com/liatrio/backstage-plugin-autogov/issues/10)) ([a05d955](https://github.com/liatrio/backstage-plugin-autogov/commit/a05d955227ab418c6487a278d41278dce939e528))
+
 ## [1.2.1](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.2.0...v1.2.1) (2024-11-08)
 
 ### Bug Fixes
