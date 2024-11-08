@@ -7,12 +7,14 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/liatrio/backstage-plugin-autogov.git",
-    "directory": "backstage-plugin-autogov-common"
+    "directory": "packages/backstage-plugin-autogov-common"
   },
   "backstage": {
     "role": "frontend-plugin",
     "pluginId": "autogov-common",
-    "pluginPackages": []
+    "pluginPackages": [
+      "@liatrio/backstage-plugin-autogov-common"
+    ]
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
