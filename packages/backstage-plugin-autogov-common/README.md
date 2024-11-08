@@ -2,7 +2,7 @@
 
 Welcome to the autogov-common plugin!
 
-_This plugin was created through the Backstage CLI_
+This plugin was created through the Backstage CLI
 
 ## Getting started
 

@@ -1,12 +1,11 @@
 {
-  "name": "@liatrio/backstage-github-autogov-plugin",
-  "version": "1.2.1",
-  "private": true,
+  "name": "@liatrio/backstage-plugin-autogov",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/liatrio/backstage-github-autogov-plugin.git"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@backstage/cli": "^0.27.1",
     "@semantic-release/changelog": "^6.0.3",
@@ -16,22 +15,18 @@
     "@semantic-release/npm": "^11.0.3",
     "@semantic-release/release-notes-generator": "^12.1.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
+    "husky": "^9.1.6",
     "lerna": "^8.1.9",
     "typescript": "^5.6.3"
   },
   "workspaces": [
-    "backstage-plugin-*"
+    "packages/*"
   ],
-  "dependencies": {
-    "husky": "^9.1.6",
-    "node-fetch": "^3.3.2"
-  },
   "scripts": {
-    "build": "backstage-cli repo build --all",
+    "buildnew": "lerna run tsc:full && lerna run build",
     "lint": "backstage-cli repo lint",
     "lint:all": "yarn lint && yarn prettier:check",
-    "install:all:local": "yarn --cwd backstage-plugin-autogov-common install --immutable && yarn --cwd backstage-plugin-github-releases-assets-backend install --immutable && yarn --cwd backstage-plugin-github-releases-autogov install --immutable",
-    "test:all": "yarn install:all:local && yarn tsc:full && yarn --cwd backstage-plugin-autogov-common test --all --no-watch && yarn --cwd backstage-plugin-github-releases-assets-backend test --all --no-watch && yarn --cwd backstage-plugin-github-releases-autogov test --all --no-watch",
+    "test": "CI=true lerna --scope '@liatrio/*' run test",
     "prettier:check": "npx --yes prettier --check .",
     "prettier:fix": "npx --yes prettier --write .",
     "tsc:full": "tsc --skipLibCheck true --incremental false",

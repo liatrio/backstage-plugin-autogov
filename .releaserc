@@ -27,23 +27,7 @@
       "@semantic-release/npm",
       {
         "npmPublish": true,
-        "pkgRoot": "backstage-plugin-github-releases-autogov",
-        "registry": "https://npm.pkg.github.com/"
-      }
-    ],
-    [
-      "@semantic-release/npm",
-      {
-        "npmPublish": true,
-        "pkgRoot": "backstage-plugin-github-releases-assets-backend",
-        "registry": "https://npm.pkg.github.com/"
-      }
-    ],
-    [
-      "@semantic-release/npm",
-      {
-        "npmPublish": true,
-        "pkgRoot": "backstage-plugin-autogov-common",
+        "pkgRoot": "packages/backstage-plugin-autogov-common",
         "registry": "https://npm.pkg.github.com/"
       }
     ]
