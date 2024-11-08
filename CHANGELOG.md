@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.0.0...v1.1.0) (2024-11-08)
+
+### Features
+
+* add autogov processor ([#6](https://github.com/liatrio/backstage-plugin-autogov/issues/6)) ([2a8a795](https://github.com/liatrio/backstage-plugin-autogov/commit/2a8a7958b83b7fbcb888d93c9a03935d6266e1d7))
+
 ## 1.0.0 (2024-11-08)
 
 ### Features
