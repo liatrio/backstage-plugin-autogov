@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/liatrio/backstage-github-autogov-plugin/compare/v1.2.4...v1.2.5) (2024-11-08)
+
+### Bug Fixes
+
+* install and build all subcomponents before tests ([#15](https://github.com/liatrio/backstage-github-autogov-plugin/issues/15)) ([60ef2e0](https://github.com/liatrio/backstage-github-autogov-plugin/commit/60ef2e02e8daa5cf0cd8e1e1e8e664ad13690a0e))
+* set packages public, update yarn ([6279cb0](https://github.com/liatrio/backstage-github-autogov-plugin/commit/6279cb06601a8390d74a46cd553b4b13c9aad293))
+
 ## [1.2.4](https://github.com/liatrio/backstage-github-autogov-plugin/compare/v1.2.3...v1.2.4) (2024-11-07)
 
 ### Bug Fixes
