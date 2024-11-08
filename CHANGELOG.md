@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.1.1...v1.2.0) (2024-11-08)
+
+### Features
+
+* publish autogov-common to npmjs ([#8](https://github.com/liatrio/backstage-plugin-autogov/issues/8)) ([7a92bca](https://github.com/liatrio/backstage-plugin-autogov/commit/7a92bca7151bc1807ef4880eecdce38bdf951d6e))
+
 ## [1.1.1](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.1.0...v1.1.1) (2024-11-08)
 
 ### Bug Fixes
