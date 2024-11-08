@@ -7,7 +7,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liatrio/backstage-github-autogov-plugin.git",
+    "url": "git+https://github.com/liatrio/backstage-plugin-autogov.git",
     "directory": "backstage-plugin-autogov-common"
   },
   "backstage": {

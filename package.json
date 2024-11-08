@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liatrio/backstage-github-autogov-plugin.git"
+    "url": "git+https://github.com/liatrio/backstage-plugin-autogov.git"
   },
   "license": "Apache-2.0",
   "devDependencies": {
