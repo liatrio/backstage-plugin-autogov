@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.3.2...v1.4.0) (2024-11-09)
+
+### Features
+
+* add autogov catalog column ([#14](https://github.com/liatrio/backstage-plugin-autogov/issues/14)) ([5733095](https://github.com/liatrio/backstage-plugin-autogov/commit/5733095cf1d48d2bc4d4314a18e2256c134a1dc1))
+
 ## [1.3.2](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.3.1...v1.3.2) (2024-11-08)
 
 ### Bug Fixes
