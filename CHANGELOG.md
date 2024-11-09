@@ -1,3 +1,9 @@
+## [1.6.0](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.5.0...v1.6.0) (2024-11-09)
+
+### Features
+
+* add release card ([#16](https://github.com/liatrio/backstage-plugin-autogov/issues/16)) ([8ec4312](https://github.com/liatrio/backstage-plugin-autogov/commit/8ec43124768b27b8e09d7d0bb03286002f6734a1))
+
 ## [1.5.0](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.4.0...v1.5.0) (2024-11-09)
 
 ### Features
