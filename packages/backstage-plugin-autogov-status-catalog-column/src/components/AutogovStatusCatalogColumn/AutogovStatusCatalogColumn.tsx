@@ -118,7 +118,7 @@ export const defaultColumnsWithAutogovStatusRightOf: InsertColumnFunc = (
     entityListContext.filters.kind?.value.toLocaleLowerCase() === "component"
   ) {
     const leftColumnIndex = defaultColumns.findIndex(
-      (column) => column.title === leftColumnTitle,
+      (column: any) => column.title === leftColumnTitle,
     );
     defaultColumns.splice(
       leftColumnIndex + 1,
