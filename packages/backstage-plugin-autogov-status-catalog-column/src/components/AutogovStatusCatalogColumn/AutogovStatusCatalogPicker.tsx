@@ -1,3 +1,13 @@
+/**
+ * Processes entities to check their autogov status from release assets
+ *
+ * @author Daniel Hagen <daniel.hagen@liatrio.com>
+ * @author Amber Beasley <amber.beasley@liatrio.com>
+ *
+ * @license Apache-2.0
+ *
+ */
+
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import { EntityFilter } from "@backstage/plugin-catalog-react";
@@ -34,7 +44,7 @@ export type EntityTagPickerProps = {
  */
 const useStyles = makeStyles(
   { input: {} },
-  { name: "CatalogReactEntityTagPicker" },
+  { name: "CatalogReactEntityTagPicker" }
 );
 
 /**
@@ -108,7 +118,7 @@ interface EntityFilters extends DefaultEntityFilters {
  * <AutogovLatestReleaseStatusPicker showCounts={true} />
  */
 export const AutogovLatestReleaseStatusPicker = (
-  props: EntityTagPickerProps,
+  props: EntityTagPickerProps
 ) => {
   const classes = useStyles();
 

@@ -1,3 +1,13 @@
+/**
+ * Processes entities to check their autogov status from release assets
+ *
+ * @author Daniel Hagen <daniel.hagen@liatrio.com>
+ * @author Amber Beasley <amber.beasley@liatrio.com>
+ *
+ * @license Apache-2.0
+ *
+ */
+
 import { MiddlewareFactory } from "@backstage/backend-defaults/rootHttpRouter";
 import {
   AuthService,
@@ -13,7 +23,7 @@ import {
   stringifyEntityRef,
 } from "@backstage/catalog-model";
 import express from "express";
-import Router from "express-promise-router";
+import expressRouter from "express-promise-router";
 
 export const AUTOGOV_STATUS_FILE_ANNOTATION = "liatrio.com/autogov-result-file";
 
@@ -28,13 +38,13 @@ export interface RouterOptions {
 type ShouldProcessEntity = (
   entity: Entity,
   options: any,
-  logger?: LoggerService,
+  logger?: LoggerService
 ) => boolean;
 
 const shouldProcessEntity: ShouldProcessEntity = (
   entity: Entity,
   options: any,
-  logger?: LoggerService,
+  logger?: LoggerService
 ) => {
   const entityKinds = options.entityKinds;
   const entityTypes = options.entityTypes;
@@ -45,17 +55,17 @@ const shouldProcessEntity: ShouldProcessEntity = (
       : undefined;
   logger?.debug(
     `Checking if entity ${stringifyEntityRef(
-      entity,
+      entity
     )} should be processed, kind: ${entityKind}, from: ${JSON.stringify(
-      entityKinds,
-    )}, type: ${entitySpecType}, from ${JSON.stringify(entityTypes)}`,
+      entityKinds
+    )}, type: ${entitySpecType}, from ${JSON.stringify(entityTypes)}`
   );
   logger?.debug(
     `Entity Types Length ${
       entityTypes.length
     }, kind match ${entityKinds.includes(
-      entityKind,
-    )}, type match: ${entityTypes.includes(entitySpecType || "undefined")}`,
+      entityKind
+    )}, type match: ${entityTypes.includes(entitySpecType || "undefined")}`
   );
   if (entityTypes.length > 0) {
     if (entitySpecType) {
@@ -69,7 +79,7 @@ const shouldProcessEntity: ShouldProcessEntity = (
 };
 
 export async function createRouter(
-  dependancies: RouterOptions,
+  dependancies: RouterOptions
 ): Promise<express.Router> {
   const { logger, auth, config } = dependancies;
   const catalog =
@@ -99,7 +109,7 @@ export async function createRouter(
   };
   logger.debug(`Autogov options: ${JSON.stringify(options)}`);
 
-  const router = Router();
+  const router = expressRouter();
   router.use(express.json());
 
   router.get("/health", (_, response) => {
@@ -118,7 +128,7 @@ export async function createRouter(
 
     const entity = await catalog.getEntityByRef(
       { kind, namespace, name },
-      { token },
+      { token }
     );
 
     if (!entity) {
@@ -239,7 +249,7 @@ export async function createRouter(
           "Content-Type": "application/json",
           Authorization: `Bearer ${githubToken}`,
         },
-      },
+      }
     );
     if (!releasesReponse.ok) {
       response.statusCode = releasesReponse.status;
@@ -275,8 +285,8 @@ export async function createRouter(
                 const parsedResultsFileContent = JSON.parse(resultsFileContent);
                 logger.debug(
                   `Parsed autogov status file: ${JSON.stringify(
-                    parsedResultsFileContent,
-                  )}`,
+                    parsedResultsFileContent
+                  )}`
                 );
                 autogovStatus = parsedResultsFileContent.result;
                 autogovFailedPolicies = parsedResultsFileContent.violations;
@@ -286,7 +296,7 @@ export async function createRouter(
             }
           } else {
             logger.info(
-              `Autogov status file not found in release assets: ${release.name}`,
+              `Autogov status file not found in release assets: ${release.name}`
             );
           }
 

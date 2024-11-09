@@ -1,3 +1,12 @@
+/**
+ *
+ * @author Daniel Hagen <daniel.hagen@liatrio.com>
+ * @author Amber Beasley <amber.beasley@liatrio.com>
+ *
+ * @license Apache-2.0
+ *
+ */
+
 import {
   coreServices,
   createBackendModule,
@@ -20,7 +29,7 @@ export const catalogModuleAutogovProcessor = createBackendModule({
         catalog.addProcessor(
           AutogovProcessor.fromConfig(config, {
             logger,
-          }),
+          })
         );
       },
     });

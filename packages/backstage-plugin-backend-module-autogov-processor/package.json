@@ -49,7 +49,14 @@
     "@backstage/backend-test-utils": "^1.0.0",
     "@backstage/cli": "^0.27.1",
     "@types/jest": "^29.5.14",
-    "@types/node-fetch": "2"
+    "@types/node-fetch": "2",
+    "@types/showdown": "^2",
+    "concat-md": "^0.5.1",
+    "rimraf": "^6.0.1",
+    "showdown": "^2.1.0",
+    "typedoc": "^0.26.11",
+    "typedoc-plugin-markdown": "^4.2.10",
+    "typescript": "^5.6.3"
   },
   "files": [
     "dist"

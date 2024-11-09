@@ -1,3 +1,13 @@
+/**
+ * Processes entities to check their autogov status from release assets
+ *
+ * @author Daniel Hagen <daniel.hagen@liatrio.com>
+ * @author Amber Beasley <amber.beasley@liatrio.com>
+ *
+ * @license Apache-2.0
+ *
+ */
+
 import { DiscoveryApi, FetchApi } from "@backstage/core-plugin-api";
 import { ResponseError } from "@backstage/errors";
 import { ReleaseData } from "./types";
@@ -21,7 +31,7 @@ export class AutogovReleasesClient implements AutogovReleasesApi {
       `${baseUrl}/releases/${kind}/${namespace}/${name}/`,
       {
         method: "GET",
-      },
+      }
     );
 
     if (!response.ok) {

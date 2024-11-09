@@ -1,3 +1,13 @@
+/**
+ * Processes entities to check their autogov status from release assets
+ *
+ * @author Daniel Hagen <daniel.hagen@liatrio.com>
+ * @author Amber Beasley <amber.beasley@liatrio.com>
+ *
+ * @license Apache-2.0
+ *
+ */
+
 import React from "react";
 import {
   Table,
@@ -18,7 +28,7 @@ type AutogovReleasesTableCardProps = {
 };
 
 export const AutogovReleasesTableCard = (
-  props: AutogovReleasesTableCardProps,
+  props: AutogovReleasesTableCardProps
 ) => {
   const { ownerRef, title } = props;
   const autogovReleasesApi = useApi(autogovReleasesApiRef);
@@ -68,7 +78,7 @@ export const AutogovReleasesTableCard = (
 
   if (
     !releasesData.some(
-      (release: any) => release.autogovFailedPolicies?.length > 0,
+      (release: any) => release.autogovFailedPolicies?.length > 0
     )
   ) {
     return (

@@ -1,10 +1,11 @@
 /**
- * @file AutoGovProcessor.ts
- * @description Processes entities to check their autogov status from release assets
+ * Processes entities to check their autogov status from release assets
  *
  * @author Daniel Hagen <daniel.hagen@liatrio.com>
  * @author Amber Beasley <amber.beasley@liatrio.com>
- * @copyright 2024 Liatrio, Inc.
+ *
+ * @license Apache-2.0
+ *
  */
 
 import { LoggerService } from "@backstage/backend-plugin-api";
@@ -152,23 +153,23 @@ export class AutogovProcessor implements CatalogProcessor {
         : undefined;
     this.logger.debug(
       `Checking if entity ${stringifyEntityRef(
-        entity,
+        entity
       )} should be processed, kind: ${entityKind}, from: ${JSON.stringify(
-        this.entityKinds,
+        this.entityKinds
       )}, type: ${entitySpecType}, from ${JSON.stringify(this.entityTypes)}`,
       {
         ...this.loggerMeta,
-      },
+      }
     );
     this.logger.debug(
       `Entity Types Length ${
         this.entityTypes.length
       }, kind match ${this.entityKinds.includes(
-        entityKind,
+        entityKind
       )}, type match: ${this.entityTypes.includes(
-        entitySpecType || "undefined",
+        entitySpecType || "undefined"
       )}`,
-      { ...this.loggerMeta },
+      { ...this.loggerMeta }
     );
     if (this.entityTypes.length > 0) {
       if (entitySpecType) {
@@ -211,9 +212,9 @@ export class AutogovProcessor implements CatalogProcessor {
     this.scmIntegrations = options.scmIntegrations;
     this.logger.debug(
       `Autogov Processor SCM Integrations: ${JSON.stringify(
-        options.scmIntegrations,
+        options.scmIntegrations
       )}`,
-      { ...this.loggerMeta },
+      { ...this.loggerMeta }
     );
 
     this.resultsFile = {
@@ -222,37 +223,37 @@ export class AutogovProcessor implements CatalogProcessor {
     };
     this.logger.debug(
       `Autogov Processor results file set to ${JSON.stringify(
-        this.resultsFile,
+        this.resultsFile
       )}`,
-      { ...this.loggerMeta },
+      { ...this.loggerMeta }
     );
 
     this.requireAnnotation = options.requireAnnotation ?? true;
     this.logger.debug(
       `Autogov Processor require annotation set to ${this.requireAnnotation}`,
-      { ...this.loggerMeta },
+      { ...this.loggerMeta }
     );
 
     this.entityKinds = options.entityKinds ?? ["component"];
     this.logger.debug(
       `Autogov Processor entity kinds set to ${this.entityKinds}`,
-      { ...this.loggerMeta },
+      { ...this.loggerMeta }
     );
 
     this.entityTypes = options.entityTypes ?? ["website"];
     this.logger.debug(
       `Autogov Processor entity types set to ${this.entityTypes}`,
-      { ...this.loggerMeta },
+      { ...this.loggerMeta }
     );
 
     this.cacheTTLMilliseconds = durationToMilliseconds(
-      options.cacheTTL || { minutes: 30 },
+      options.cacheTTL || { minutes: 30 }
     );
     this.logger.debug(
       `Autogov Processor Cache TTL set to ${this.cacheTTLMilliseconds}ms`,
       {
         ...this.loggerMeta,
-      },
+      }
     );
   }
 
@@ -280,7 +281,7 @@ export class AutogovProcessor implements CatalogProcessor {
    */
   static fromConfig(
     config: Config,
-    options: AutogovProcessorOptions,
+    options: AutogovProcessorOptions
   ): AutogovProcessor {
     const c = config.getOptionalConfig("autogov");
     const githubConfig = c?.getOptionalConfig("github");
@@ -331,7 +332,7 @@ export class AutogovProcessor implements CatalogProcessor {
    */
   private async getAutogovDataFromGithubAPI(
     entity: Entity,
-    integration: GithubIntegration,
+    integration: GithubIntegration
   ): Promise<string> {
     if (!entity || !entity.metadata?.annotations) {
       this.logger.error(`Entity input incorrect`, {
@@ -350,7 +351,7 @@ export class AutogovProcessor implements CatalogProcessor {
           `Overriding results file with annotation value: ${resultsFile}`,
           {
             ...this.loggerMeta,
-          },
+          }
         );
       }
     }
@@ -385,7 +386,7 @@ export class AutogovProcessor implements CatalogProcessor {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-      },
+      }
     );
     if (!latestReleaseResponse) {
       this.logger.error(`Error fetching latest release`, {
@@ -465,7 +466,7 @@ export class AutogovProcessor implements CatalogProcessor {
   private async getCachedReleases(
     entity: Entity,
     integration: GithubIntegration,
-    cache: CatalogProcessorCache,
+    cache: CatalogProcessorCache
   ): Promise<string> {
     let cachedData = (await cache.get(stringifyEntityRef(entity))) as
       | CachedData
@@ -476,7 +477,7 @@ export class AutogovProcessor implements CatalogProcessor {
     if (!cachedData || this.isExpired(cachedData)) {
       const autogovStatus = await this.getAutogovDataFromGithubAPI(
         entity,
-        integration,
+        integration
       );
       cachedData = {
         autogovStatus: autogovStatus,
@@ -488,14 +489,14 @@ export class AutogovProcessor implements CatalogProcessor {
       this.cacheTTLMilliseconds - (Date.now() - (cachedData.cachedTime || 0));
     this.logger.debug(
       `Fetched cached autogovStatus for ${stringifyEntityRef(
-        entity,
+        entity
       )} cached on ${
         cachedData.cachedTime
       }, expires in ${cacheTimeRemaining}ms`,
       {
         ...this.loggerMeta,
         entity,
-      },
+      }
     );
     return cachedData.autogovStatus;
   }
@@ -539,7 +540,7 @@ export class AutogovProcessor implements CatalogProcessor {
     _: any,
     __: any,
     ___: any,
-    cache: CatalogProcessorCache,
+    cache: CatalogProcessorCache
   ): Promise<Entity> {
     const entityRef = stringifyEntityRef(entity);
 
@@ -549,7 +550,7 @@ export class AutogovProcessor implements CatalogProcessor {
         `Skipping entity ${entityRef} because not in entityType list`,
         {
           ...this.loggerMeta,
-        },
+        }
       );
       return entity;
     }
@@ -558,7 +559,7 @@ export class AutogovProcessor implements CatalogProcessor {
     if (!this.scmIntegrations) {
       this.logger.warn(
         `No SCM Integrations available, skipping entity ${entityRef}`,
-        { ...this.loggerMeta },
+        { ...this.loggerMeta }
       );
       return entity;
     }
@@ -579,7 +580,7 @@ export class AutogovProcessor implements CatalogProcessor {
     ) {
       this.logger.info(
         `Skipping entity ${entityRef} because it's missing the autogov annotation`,
-        { ...this.loggerMeta, entityRef },
+        { ...this.loggerMeta, entityRef }
       );
       return entity;
     }
@@ -590,12 +591,12 @@ export class AutogovProcessor implements CatalogProcessor {
 
     // Skip entities that are not Github URLs
     const detectedIntegration = this.scmIntegrations.byUrl(
-      entitySourceLocation.target,
+      entitySourceLocation.target
     );
     if (detectedIntegration?.type !== "github") {
       this.logger.debug(
         `Skipping entity ${entityRef} because not a Github URL`,
-        { ...this.loggerMeta },
+        { ...this.loggerMeta }
       );
       return entity;
     }
@@ -605,11 +606,11 @@ export class AutogovProcessor implements CatalogProcessor {
         ? await this.getCachedReleases(
             entity,
             detectedIntegration as GithubIntegration,
-            cache,
+            cache
           )
         : await this.getAutogovDataFromGithubAPI(
             entity,
-            detectedIntegration as GithubIntegration,
+            detectedIntegration as GithubIntegration
           );
 
     // If requireAnnotation is false, set autogovStatus to N/A if it's an error
@@ -619,7 +620,7 @@ export class AutogovProcessor implements CatalogProcessor {
         {
           ...this.loggerMeta,
           entityRef,
-        },
+        }
       );
       autogovStatus = AUTOGOV_STATUSES.N_A;
     }
@@ -629,7 +630,7 @@ export class AutogovProcessor implements CatalogProcessor {
       {
         ...this.loggerMeta,
         entityRef,
-      },
+      }
     );
 
     if (autogovStatus === AUTOGOV_STATUSES.ERROR) {
@@ -661,7 +662,7 @@ export class AutogovProcessor implements CatalogProcessor {
    */
   private addAutogovStatusToEntity(
     entity: Entity,
-    autogovStatus: string,
+    autogovStatus: string
   ): void {
     if (entity.metadata) {
       const annotations = entity.metadata?.annotations || {};
