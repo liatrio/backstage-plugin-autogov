@@ -1,3 +1,9 @@
+## [1.6.2](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.6.1...v1.6.2) (2024-11-09)
+
+### Bug Fixes
+
+* Config and Cleanup ([#18](https://github.com/liatrio/backstage-plugin-autogov/issues/18)) ([99d6074](https://github.com/liatrio/backstage-plugin-autogov/commit/99d6074de1da3a0101adba57763a0b87d0fd8f19))
+
 ## [1.6.1](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.6.0...v1.6.1) (2024-11-09)
 
 ### Bug Fixes
