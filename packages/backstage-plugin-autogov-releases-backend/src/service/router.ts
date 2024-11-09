@@ -38,13 +38,13 @@ export interface RouterOptions {
 type ShouldProcessEntity = (
   entity: Entity,
   options: any,
-  logger?: LoggerService
+  logger?: LoggerService,
 ) => boolean;
 
 const shouldProcessEntity: ShouldProcessEntity = (
   entity: Entity,
   options: any,
-  logger?: LoggerService
+  logger?: LoggerService,
 ) => {
   const entityKinds = options.entityKinds;
   const entityTypes = options.entityTypes;
@@ -55,17 +55,17 @@ const shouldProcessEntity: ShouldProcessEntity = (
       : undefined;
   logger?.debug(
     `Checking if entity ${stringifyEntityRef(
-      entity
+      entity,
     )} should be processed, kind: ${entityKind}, from: ${JSON.stringify(
-      entityKinds
-    )}, type: ${entitySpecType}, from ${JSON.stringify(entityTypes)}`
+      entityKinds,
+    )}, type: ${entitySpecType}, from ${JSON.stringify(entityTypes)}`,
   );
   logger?.debug(
     `Entity Types Length ${
       entityTypes.length
     }, kind match ${entityKinds.includes(
-      entityKind
-    )}, type match: ${entityTypes.includes(entitySpecType || "undefined")}`
+      entityKind,
+    )}, type match: ${entityTypes.includes(entitySpecType || "undefined")}`,
   );
   if (entityTypes.length > 0) {
     if (entitySpecType) {
@@ -79,12 +79,12 @@ const shouldProcessEntity: ShouldProcessEntity = (
 };
 
 export async function createRouter(
-  dependancies: RouterOptions
+  dependencies: RouterOptions,
 ): Promise<express.Router> {
-  const { logger, auth, config } = dependancies;
+  const { logger, auth, config } = dependencies;
   const catalog =
-    dependancies.catalog ||
-    new CatalogClient({ discoveryApi: dependancies.discovery });
+    dependencies.catalog ||
+    new CatalogClient({ discoveryApi: dependencies.discovery });
 
   const c = config.getConfig("autogov");
   const githubConfig = c?.getConfig("github");
@@ -128,7 +128,7 @@ export async function createRouter(
 
     const entity = await catalog.getEntityByRef(
       { kind, namespace, name },
-      { token }
+      { token },
     );
 
     if (!entity) {
@@ -242,17 +242,17 @@ export async function createRouter(
       return;
     }
 
-    const releasesReponse = await fetch(
+    const releasesResponse = await fetch(
       `${apiBaseUrl}/repos/${projectSlug}/releases`,
       {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${githubToken}`,
         },
-      }
+      },
     );
-    if (!releasesReponse.ok) {
-      response.statusCode = releasesReponse.status;
+    if (!releasesResponse.ok) {
+      response.statusCode = releasesResponse.status;
       response.json({
         status: "error",
         error: "GitHub API request failed",
@@ -262,7 +262,7 @@ export async function createRouter(
 
     let latestReleases: any[] = [];
     try {
-      const releases = await releasesReponse.json();
+      const releases = await releasesResponse.json();
       latestReleases = releases
         .slice(0, options.maxReleases)
         .map(async (release: any) => {
@@ -285,8 +285,8 @@ export async function createRouter(
                 const parsedResultsFileContent = JSON.parse(resultsFileContent);
                 logger.debug(
                   `Parsed autogov status file: ${JSON.stringify(
-                    parsedResultsFileContent
-                  )}`
+                    parsedResultsFileContent,
+                  )}`,
                 );
                 autogovStatus = parsedResultsFileContent.result;
                 autogovFailedPolicies = parsedResultsFileContent.violations;
@@ -296,7 +296,7 @@ export async function createRouter(
             }
           } else {
             logger.info(
-              `Autogov status file not found in release assets: ${release.name}`
+              `Autogov status file not found in release assets: ${release.name}`,
             );
           }
 

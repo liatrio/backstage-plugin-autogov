@@ -29,7 +29,7 @@ export const catalogModuleAutogovProcessor = createBackendModule({
         catalog.addProcessor(
           AutogovProcessor.fromConfig(config, {
             logger,
-          })
+          }),
         );
       },
     });

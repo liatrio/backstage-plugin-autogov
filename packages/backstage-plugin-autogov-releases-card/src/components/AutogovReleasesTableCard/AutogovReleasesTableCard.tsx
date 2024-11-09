@@ -28,7 +28,7 @@ type AutogovReleasesTableCardProps = {
 };
 
 export const AutogovReleasesTableCard = (
-  props: AutogovReleasesTableCardProps
+  props: AutogovReleasesTableCardProps,
 ) => {
   const { ownerRef, title } = props;
   const autogovReleasesApi = useApi(autogovReleasesApiRef);
@@ -78,7 +78,7 @@ export const AutogovReleasesTableCard = (
 
   if (
     !releasesData.some(
-      (release: any) => release.autogovFailedPolicies?.length > 0
+      (release: any) => release.autogovFailedPolicies?.length > 0,
     )
   ) {
     return (

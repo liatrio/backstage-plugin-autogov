@@ -36,7 +36,7 @@ export enum AUTOGOV_STATUS_WEIGHT {
 }
 
 export const getAutogovStatusWeight = (
-  status: string
+  status: string,
 ): AUTOGOV_STATUS_WEIGHT => {
   switch (status) {
     case AUTOGOV_STATUSES.PASSED:
@@ -71,13 +71,13 @@ export function createAutogovStatusCatalogColumn(): TableColumn<CatalogTableRow>
       const status1 = getAutogovStatusWeight(
         (
           entity1.metadata?.annotations?.[AUTOGOV_STATUS_ANNOTATION] || ""
-        ).toUpperCase()
+        ).toUpperCase(),
       );
 
       const status2 = getAutogovStatusWeight(
         (
           entity2.metadata?.annotations?.[AUTOGOV_STATUS_ANNOTATION] || ""
-        ).toUpperCase()
+        ).toUpperCase(),
       );
 
       return status1 - status2;
@@ -99,7 +99,7 @@ export function createAutogovStatusCatalogColumn(): TableColumn<CatalogTableRow>
  */
 type InsertColumnFunc = (
   leftColumnTitle: string,
-  context: EntityListContextProps
+  context: EntityListContextProps,
 ) => TableColumn<CatalogTableRow>[];
 
 /**
@@ -121,19 +121,19 @@ type InsertColumnFunc = (
  */
 export const defaultColumnsWithAutogovStatusRightOf: InsertColumnFunc = (
   leftColumnTitle,
-  entityListContext
+  entityListContext,
 ) => {
   const defaultColumns = CatalogTable.defaultColumnsFunc(entityListContext);
   if (
     entityListContext.filters.kind?.value.toLocaleLowerCase() === "component"
   ) {
     const leftColumnIndex = defaultColumns.findIndex(
-      (column: any) => column.title === leftColumnTitle
+      (column: any) => column.title === leftColumnTitle,
     );
     defaultColumns.splice(
       leftColumnIndex + 1,
       0,
-      createAutogovStatusCatalogColumn()
+      createAutogovStatusCatalogColumn(),
     );
   }
   return defaultColumns;
@@ -156,7 +156,7 @@ export const defaultColumnsWithAutogovStatusRightOf: InsertColumnFunc = (
  * ```
  */
 export const defaultColumnsWithAutogovStatus: CatalogTableColumnsFunc = (
-  entityListContext
+  entityListContext,
 ) => {
   const defaultColumns = CatalogTable.defaultColumnsFunc(entityListContext);
   if (

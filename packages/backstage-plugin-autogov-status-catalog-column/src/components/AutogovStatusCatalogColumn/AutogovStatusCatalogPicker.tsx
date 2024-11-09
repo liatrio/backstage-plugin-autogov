@@ -44,7 +44,7 @@ export type EntityTagPickerProps = {
  */
 const useStyles = makeStyles(
   { input: {} },
-  { name: "CatalogReactEntityTagPicker" }
+  { name: "CatalogReactEntityTagPicker" },
 );
 
 /**
@@ -118,7 +118,7 @@ interface EntityFilters extends DefaultEntityFilters {
  * <AutogovLatestReleaseStatusPicker showCounts={true} />
  */
 export const AutogovLatestReleaseStatusPicker = (
-  props: EntityTagPickerProps
+  props: EntityTagPickerProps,
 ) => {
   const classes = useStyles();
 

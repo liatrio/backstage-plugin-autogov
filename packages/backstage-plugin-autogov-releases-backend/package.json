@@ -54,7 +54,10 @@
     "supertest": "^6.2.4"
   },
   "files": [
-    "dist"
+    "dist",
+    "license",
+    "README.md",
+    "CONTRIBUTING.md"
   ],
   "configSchema": {
     "$schema": "https://backstage.io/schema/config-v1",

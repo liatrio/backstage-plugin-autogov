@@ -37,7 +37,7 @@ export const autogovReleasesPlugin = createBackendPlugin({
             logger,
             auth,
             discovery,
-          })
+          }),
         );
         httpRouter.addAuthPolicy({
           path: "/health",

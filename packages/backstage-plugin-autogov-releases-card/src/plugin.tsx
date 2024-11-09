@@ -48,8 +48,8 @@ export const AutogovReleasesCard = autogovReleasesCardPlugin.provide(
                 />
               );
             };
-          }
+          },
         ),
     },
-  })
+  }),
 );

@@ -59,7 +59,10 @@
     "typescript": "^5.6.3"
   },
   "files": [
-    "dist"
+    "dist",
+    "license",
+    "README.md",
+    "CONTRIBUTING.md"
   ],
   "configSchema": {
     "$schema": "https://backstage.io/schema/config-v1",

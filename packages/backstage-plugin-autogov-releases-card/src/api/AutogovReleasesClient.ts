@@ -31,7 +31,7 @@ export class AutogovReleasesClient implements AutogovReleasesApi {
       `${baseUrl}/releases/${kind}/${namespace}/${name}/`,
       {
         method: "GET",
-      }
+      },
     );
 
     if (!response.ok) {
