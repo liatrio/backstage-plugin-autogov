@@ -1,3 +1,9 @@
+## [1.6.1](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.6.0...v1.6.1) (2024-11-09)
+
+### Bug Fixes
+
+* set publish config to public ([#17](https://github.com/liatrio/backstage-plugin-autogov/issues/17)) ([91a4376](https://github.com/liatrio/backstage-plugin-autogov/commit/91a4376d874a245e826235e9b258c5aeed45e23b))
+
 ## [1.6.0](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.5.0...v1.6.0) (2024-11-09)
 
 ### Features
