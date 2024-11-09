@@ -1,3 +1,13 @@
+/**
+ * Processes entities to check their autogov status from release assets
+ *
+ * @author Daniel Hagen
+ * @author Amber Beasley
+ *
+ * @license Apache-2.0
+ *
+ */
+
 import { MiddlewareFactory } from "@backstage/backend-defaults/rootHttpRouter";
 import {
   AuthService,
@@ -13,7 +23,7 @@ import {
   stringifyEntityRef,
 } from "@backstage/catalog-model";
 import express from "express";
-import Router from "express-promise-router";
+import expressRouter from "express-promise-router";
 
 export const AUTOGOV_STATUS_FILE_ANNOTATION = "liatrio.com/autogov-result-file";
 
@@ -69,12 +79,12 @@ const shouldProcessEntity: ShouldProcessEntity = (
 };
 
 export async function createRouter(
-  dependancies: RouterOptions,
+  dependencies: RouterOptions,
 ): Promise<express.Router> {
-  const { logger, auth, config } = dependancies;
+  const { logger, auth, config } = dependencies;
   const catalog =
-    dependancies.catalog ||
-    new CatalogClient({ discoveryApi: dependancies.discovery });
+    dependencies.catalog ||
+    new CatalogClient({ discoveryApi: dependencies.discovery });
 
   const c = config.getConfig("autogov");
   const githubConfig = c?.getConfig("github");
@@ -99,7 +109,7 @@ export async function createRouter(
   };
   logger.debug(`Autogov options: ${JSON.stringify(options)}`);
 
-  const router = Router();
+  const router = expressRouter();
   router.use(express.json());
 
   router.get("/health", (_, response) => {
@@ -232,7 +242,7 @@ export async function createRouter(
       return;
     }
 
-    const releasesReponse = await fetch(
+    const releasesResponse = await fetch(
       `${apiBaseUrl}/repos/${projectSlug}/releases`,
       {
         headers: {
@@ -241,8 +251,8 @@ export async function createRouter(
         },
       },
     );
-    if (!releasesReponse.ok) {
-      response.statusCode = releasesReponse.status;
+    if (!releasesResponse.ok) {
+      response.statusCode = releasesResponse.status;
       response.json({
         status: "error",
         error: "GitHub API request failed",
@@ -252,7 +262,7 @@ export async function createRouter(
 
     let latestReleases: any[] = [];
     try {
-      const releases = await releasesReponse.json();
+      const releases = await releasesResponse.json();
       latestReleases = releases
         .slice(0, options.maxReleases)
         .map(async (release: any) => {

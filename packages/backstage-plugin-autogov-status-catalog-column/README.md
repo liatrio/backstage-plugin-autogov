@@ -1,13 +1,43 @@
-# autogov-status-catalog-column
+# @liatrio/backstage-plugin-autogov-status-catalog-column
 
-Welcome to the autogov-status-catalog-column plugin!
+This is the frontend plugin for the `@liatrio/backstage-plugin-autogov-status-catalog-column` plugin. It provides the necessary UI components and interactions for the backend service.
 
-_This plugin was created through the Backstage CLI_
+See the [root plugin documentation](https://github.com/liatrio/backstage-plugin-autogov) for additional information.
 
-## Getting started
+## Installation
 
-Your plugin has been added to the example app in this repository, meaning you'll be able to access it by running `yarn start` in the root directory, and then navigating to [/autogov-status-catalog-column](http://localhost:3000/autogov-status-catalog-column).
+To install the frontend plugin, use the following command from a Backstage environment:
 
-You can also serve the plugin in isolation by running `yarn start` in the plugin directory.
-This method of serving the plugin provides quicker iteration speed and a faster startup and hot reloads.
-It is only meant for local development, and the setup for it can be found inside the [/dev](./dev) directory.
+```bash
+yarn add @liatrio/backstage-plugin-autogov-status-catalog-column
+```
+
+Additionally, you need to install the backend plugin:
+
+```bash
+yarn add @liatrio/backstage-plugin-backend-module-autogov-processor
+```
+
+## Integration
+
+To integrate the frontend plugin with the backend plugin, follow these steps:
+
+1. Install both the frontend and backend plugins using the commands above.
+1. Configure the backend plugin in your Backstage application.
+1. Configure the frontend plugin in your Backstage application. Refer to the Backstage documentation for details on how to add frontend plugins.
+
+## Usage
+
+After installation and integration, you need to configure the plugin in your Backstage application. Refer to the Backstage documentation for details on how to add and configure plugins.
+
+## Contributing
+
+We welcome contributions to improve this plugin. Please follow our [contributing guidelines](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you have any questions or need support, please open an issue in our [GitHub repository](https://github.com/liatrio/backstage-plugin-autogov/issues).

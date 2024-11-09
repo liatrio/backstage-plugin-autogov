@@ -1,3 +1,13 @@
+/**
+ * Processes entities to check their autogov status from release assets
+ *
+ * @author Daniel Hagen
+ * @author Amber Beasley
+ *
+ * @license Apache-2.0
+ *
+ */
+
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import { EntityFilter } from "@backstage/plugin-catalog-react";

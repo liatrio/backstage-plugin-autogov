@@ -16,7 +16,8 @@
     "@semantic-release/release-notes-generator": "^12.1.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "husky": "^9.1.6",
-    "lerna": "^8.1.9",
+    "lerna": "8.0.2",
+    "semantic-release": "^24.2.0",
     "typescript": "^5.6.3"
   },
   "workspaces": [
@@ -24,6 +25,7 @@
   ],
   "scripts": {
     "build": "lerna run build",
+    "build:doc": "lerna run build:doc",
     "lint": "backstage-cli repo lint",
     "lint:all": "yarn lint && yarn prettier:check",
     "test": "CI=true lerna --scope '@liatrio/*' run test",
@@ -33,5 +35,63 @@
     "prepare": "husky",
     "clean": "backstage-cli repo clean"
   },
-  "packageManager": "yarn@4.4.1"
+  "files": [
+    "packages/*/dist",
+    "dist-types/*/dist",
+    "LICENSE"
+  ],
+  "packageManager": "yarn@4.4.1",
+  "configSchema": {
+    "$schema": "https://backstage.io/schema/config-v1",
+    "title": "@liatrio/backend-module-autogov-processor",
+    "type": "object",
+    "properties": {
+      "github": {
+        "type": "object",
+        "description": "GitHub configuration",
+        "properties": {
+          "resultsFile": {
+            "type": "object",
+            "description": "Autogov results file configuration",
+            "properties": {
+              "allowOverride": {
+                "type": "boolean",
+                "description": "Whether to allow override of default results file location",
+                "default": false
+              },
+              "default": {
+                "type": "string",
+                "description": "Default name for the results file",
+                "default": "results"
+              }
+            }
+          },
+          "requireAnnotation": {
+            "type": "boolean",
+            "description": "Whether to require annotations for processing",
+            "default": true
+          },
+          "entityKinds": {
+            "type": "array",
+            "description": "Array of entity kinds to process",
+            "default": [
+              "component"
+            ]
+          },
+          "entityTypes": {
+            "type": "array",
+            "description": "Array of entity types to process",
+            "default": [
+              "website"
+            ]
+          },
+          "maxReleasesResults": {
+            "type": "number",
+            "description": "Maximum number of releases to show in autogov results",
+            "default": 5
+          }
+        }
+      }
+    }
+  }
 }

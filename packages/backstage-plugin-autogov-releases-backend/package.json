@@ -47,12 +47,69 @@
     "@backstage/cli": "^0.27.1",
     "@backstage/plugin-auth-backend": "^0.23.0",
     "@backstage/plugin-auth-backend-module-guest-provider": "^0.2.0",
-    "@types/express": "*",
+    "@types/express": "^4.0.0",
+    "@types/jest": "^29.5.14",
     "@types/supertest": "^2.0.12",
     "msw": "^2.3.1",
     "supertest": "^6.2.4"
   },
   "files": [
-    "dist"
-  ]
+    "dist",
+    "license",
+    "README.md",
+    "CONTRIBUTING.md"
+  ],
+  "configSchema": {
+    "$schema": "https://backstage.io/schema/config-v1",
+    "title": "@liatrio/backend-module-autogov-processor",
+    "type": "object",
+    "properties": {
+      "github": {
+        "type": "object",
+        "description": "GitHub configuration",
+        "properties": {
+          "resultsFile": {
+            "type": "object",
+            "description": "Autogov results file configuration",
+            "properties": {
+              "allowOverride": {
+                "type": "boolean",
+                "description": "Whether to allow override of default results file location",
+                "default": false
+              },
+              "default": {
+                "type": "string",
+                "description": "Default name for the results file",
+                "default": "results"
+              }
+            }
+          },
+          "requireAnnotation": {
+            "type": "boolean",
+            "description": "Whether to require annotations for processing",
+            "default": true
+          },
+          "entityKinds": {
+            "type": "array",
+            "description": "Array of entity kinds to process",
+            "default": [
+              "component"
+            ]
+          },
+          "entityTypes": {
+            "type": "array",
+            "description": "Array of entity types to process",
+            "default": [
+              "website"
+            ]
+          },
+          "maxReleasesResults": {
+            "type": "number",
+            "description": "Maximum number of releases to show in autogov results",
+            "default": 5
+          }
+        }
+      }
+    }
+  }
 }

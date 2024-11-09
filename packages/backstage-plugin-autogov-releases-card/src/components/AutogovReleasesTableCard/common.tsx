@@ -1,3 +1,13 @@
+/**
+ * Processes entities to check their autogov status from release assets
+ *
+ * @author Daniel Hagen
+ * @author Amber Beasley
+ *
+ * @license Apache-2.0
+ *
+ */
+
 import React from "react";
 import { Link } from "@backstage/core-components";
 import LocalOfferOutlinedIcon from "@material-ui/icons/LocalOfferOutlined";

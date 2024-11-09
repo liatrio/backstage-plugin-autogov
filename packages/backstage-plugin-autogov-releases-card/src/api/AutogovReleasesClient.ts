@@ -1,3 +1,13 @@
+/**
+ * Processes entities to check their autogov status from release assets
+ *
+ * @author Daniel Hagen
+ * @author Amber Beasley
+ *
+ * @license Apache-2.0
+ *
+ */
+
 import { DiscoveryApi, FetchApi } from "@backstage/core-plugin-api";
 import { ResponseError } from "@backstage/errors";
 import { ReleaseData } from "./types";

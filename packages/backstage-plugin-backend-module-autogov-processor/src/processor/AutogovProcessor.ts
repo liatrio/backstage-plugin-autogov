@@ -1,10 +1,11 @@
 /**
- * @file AutoGovProcessor.ts
- * @description Processes entities to check their autogov status from release assets
+ * Processes entities to check their autogov status from release assets
  *
- * @author Daniel Hagen <daniel.hagen@liatrio.com>
- * @author Amber Beasley <amber.beasley@liatrio.com>
- * @copyright 2024 Liatrio, Inc.
+ * @author Daniel Hagen
+ * @author Amber Beasley
+ *
+ * @license Apache-2.0
+ *
  */
 
 import { LoggerService } from "@backstage/backend-plugin-api";
