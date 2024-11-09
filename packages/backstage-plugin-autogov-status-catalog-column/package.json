@@ -7,7 +7,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/liatrio/backstage-plugin-autogov.git",
-    "directory": "packages/backstage-plugin-backend-module-autogov-processor"
+    "directory": "packagesbackstage-plugin-autogov-status-catalog-column"
   },
   "backstage": {
     "role": "frontend-plugin",

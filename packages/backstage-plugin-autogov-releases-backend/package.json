@@ -1,0 +1,58 @@
+{
+  "name": "@liatrio/backstage-plugin-autogov-releases-backend",
+  "version": "0.1.0",
+  "main": "./dist/index.cjs.js",
+  "types": "./dist/index.d.ts",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liatrio/backstage-plugin-autogov.git",
+    "directory": "packages/backstage-plugin-autogov-releases-backend"
+  },
+  "backstage": {
+    "role": "backend-plugin",
+    "pluginId": "autogov-releases",
+    "pluginPackages": []
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "start": "backstage-cli package start",
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "lint:all": "yarn lint && yarn prettier:check",
+    "test": "backstage-cli package test",
+    "clean": "backstage-cli package clean",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack",
+    "prettier:check": "npx --yes prettier --check .",
+    "prettier:fix": "npx --yes prettier --write .",
+    "tsc:full": "tsc --skipLibCheck true --incremental false",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@backstage/backend-defaults": "^0.5.0",
+    "@backstage/backend-plugin-api": "^1.0.0",
+    "@backstage/catalog-client": "^1.7.1",
+    "@backstage/catalog-model": "^1.7.0",
+    "@backstage/integration": "^1.15.1",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.1.0",
+    "node-fetch": "2.6.7"
+  },
+  "devDependencies": {
+    "@backstage/backend-test-utils": "^1.0.0",
+    "@backstage/cli": "^0.27.1",
+    "@backstage/plugin-auth-backend": "^0.23.0",
+    "@backstage/plugin-auth-backend-module-guest-provider": "^0.2.0",
+    "@types/express": "*",
+    "@types/supertest": "^2.0.12",
+    "msw": "^2.3.1",
+    "supertest": "^6.2.4"
+  },
+  "files": [
+    "dist"
+  ]
+}
