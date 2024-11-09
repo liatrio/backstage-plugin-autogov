@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.4.0...v1.5.0) (2024-11-09)
+
+### Features
+
+* add release backend ([#15](https://github.com/liatrio/backstage-plugin-autogov/issues/15)) ([2dbb8ac](https://github.com/liatrio/backstage-plugin-autogov/commit/2dbb8ac0965a56f1639da4f2876406bf92ecc2aa))
+
 ## [1.4.0](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.3.2...v1.4.0) (2024-11-09)
 
 ### Features
