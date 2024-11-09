@@ -30,6 +30,14 @@
         "pkgRoot": "packages/backstage-plugin-backend-module-autogov-processor",
         "registry": "https://registry.npmjs.org/"
       }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": true,
+        "pkgRoot": "packages/backstage-plugin-autogov-status-catalog-column",
+        "registry": "https://registry.npmjs.org/"
+      }
     ]
   ]
 }
