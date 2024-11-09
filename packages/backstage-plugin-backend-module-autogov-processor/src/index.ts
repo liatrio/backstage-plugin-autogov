@@ -1,8 +1,8 @@
 /**
  * The autogov-processor backend module for the catalog plugin.
  *
- * @author Daniel Hagen <daniel.hagen@liatrio.com>
- * @author Amber Beasley <amber.beasley@liatrio.com>
+ * @author Daniel Hagen
+ * @author Amber Beasley
  *
  * @license Apache-2.0
  *
