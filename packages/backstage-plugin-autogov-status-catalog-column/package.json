@@ -1,8 +1,8 @@
 {
   "name": "@liatrio/backstage-plugin-autogov-status-catalog-column",
   "version": "0.1.0",
-  "main": "./dist/index.esm.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "types": "../../dist-types/packages/backstage-plugin-autogov-status-catalog-column/index.d.ts",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -58,7 +58,9 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
     "msw": "^1.0.0",
-    "react": "^16.13.1 || ^17.0.0 || ^18.0.0"
+    "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0"
   },
   "files": [
     "dist"
