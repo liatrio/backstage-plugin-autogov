@@ -1,0 +1,1 @@
+export { AutogovReleasesTableCard } from "./AutogovReleasesTableCard";
