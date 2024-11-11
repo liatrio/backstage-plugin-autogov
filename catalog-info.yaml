@@ -5,6 +5,7 @@ metadata:
   annotations:
     github.com/project-slug: liatrio/backstage-plugin-autogov
 spec:
-  type: other
+  type: library
   lifecycle: in-progress
-  owner: backstage-foundations
+  owner: tag-autogov
+  system: demo-autogov-backstage-plugin
