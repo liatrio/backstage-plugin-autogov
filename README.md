@@ -8,7 +8,7 @@ The results displayed are the Automated Governance results published to that rel
 
 ## Dependencies
 
-The plugins will only look for Autogov results on repositories with the annotation `liatrio.com/autogov-status-file` set to `results`, or whatever the resulting policy output release asset file name is. It can only be overridden if from the default if allowed in the config.
+The plugins will only look for Autogov results on repositories with the annotation `liatrio.com/autogov-status-file` set to `results`, or whatever the resulting policy output release asset file name is. It can only be overridden from the default value if allowed in the config.
 
 The plugins will only display additional release contents if there is a release asset named according to the previously mentioned annotation or default file named `results`, and that file has `results` and `violations` objects formatted like the following:
 
@@ -202,6 +202,49 @@ const app = createApp({
 +        }
 +      />
 ```
+
+## Configuration Options
+
+The following configuration options are available for the the plugins in your `app-config.yaml` file:
+
+### `github`
+
+#### `resultsFile`
+
+- **`allowOverride`** (boolean): Whether to allow override of default results file location. Default is `false`.
+- **`default`** (string): Default name for the results file. Default is `"results"`.
+
+#### `requireAnnotation` (boolean)
+
+- Whether to require annotations for processing. Default is `true`.
+
+#### `entityKinds` (array)
+
+- Array of entity kinds to process. Default is `["component"]`.
+
+#### `entityTypes` (array)
+
+- Array of entity types to process. Default is `["website"]`.
+
+#### `maxReleasesResults` (number)
+
+- Maximum number of releases to show in autogov results. Default is `5`.
+
+## Example Configuration
+
+  ```yaml
+  autogov:
+    github:
+      resultsFile:
+        allowOverride: false
+        default: "results"
+      requireAnnotation: true
+      entityKinds:
+        - "component"
+      entityTypes:
+        - "website"
+      maxReleasesResults: 5
+  ```
 
 ## Contributing
 
