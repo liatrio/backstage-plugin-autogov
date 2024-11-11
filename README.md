@@ -232,19 +232,19 @@ The following configuration options are available for the the plugins in your `a
 
 ## Example Configuration
 
-  ```yaml
-  autogov:
-    github:
-      resultsFile:
-        allowOverride: false
-        default: "results"
-      requireAnnotation: true
-      entityKinds:
-        - "component"
-      entityTypes:
-        - "website"
-      maxReleasesResults: 5
-  ```
+```yaml
+autogov:
+  github:
+    resultsFile:
+      allowOverride: false
+      default: "results"
+    requireAnnotation: true
+    entityKinds:
+      - "component"
+    entityTypes:
+      - "website"
+    maxReleasesResults: 5
+```
 
 ## Contributing
 
