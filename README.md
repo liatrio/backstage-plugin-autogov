@@ -6,6 +6,9 @@ This is a set of plugins for the [Backstage](https://backstage.io/) Project that
 
 The results displayed are the Automated Governance results published to that releases assets.
 
+> [!IMPORTANT]
+> This plugin works with version 1.31.1 and higher of Backstage.
+
 ## Dependencies
 
 The plugins will only look for Autogov results on repositories with the annotation `liatrio.com/autogov-status-file` set to `results`, or whatever the resulting policy output release asset file name is. It can only be overridden from the default value if allowed in the config.
