@@ -58,7 +58,7 @@ For each entity the front end will call the backend plugin installed in Backstag
 
 ### Components
 
-#### GitHubReleaseCard
+#### AutogovReleasesCard
 
 This offers Automated Governance results for each release that was created in compliance with an Automated Governance workflow (which should include publishing the policy results to the release assets).
 
