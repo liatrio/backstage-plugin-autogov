@@ -7,7 +7,7 @@ This is a set of plugins for the [Backstage](https://backstage.io/) Project that
 The results displayed are the Automated Governance results published to that releases assets.
 
 > [!IMPORTANT]
-> This plugin works with version 1.31.1 and higher of Backstage. 
+> This plugin works with version 1.31.1 and higher of Backstage.
 
 ## Dependencies
 
