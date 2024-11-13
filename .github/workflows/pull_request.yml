@@ -11,6 +11,7 @@ jobs:
 
   release-dry-run:
     name: Release Dry Run
+    needs: [code-validation]
     runs-on: ubuntu-latest
     concurrency: release
 
@@ -53,4 +54,4 @@ jobs:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --dry-run --no-ci
+        run: npx semantic-release --dry-run
