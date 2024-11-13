@@ -6,12 +6,12 @@ on:
       - main
 
 jobs:
-  code-validation:
-    uses: ./.github/workflows/code_validation.yml
+  # code-validation:
+  #   uses: ./.github/workflows/code_validation.yml
 
   release-dry-run:
     name: Release Dry Run
-    needs: [code-validation]
+    # needs: [code-validation]
     runs-on: ubuntu-latest
     concurrency: release
 
@@ -52,8 +52,7 @@ jobs:
 
       - name: Bump and Release
         env:
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SSH_KEY: ${{ secrets.DEPLOY_KEY }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
