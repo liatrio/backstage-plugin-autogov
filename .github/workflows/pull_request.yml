@@ -54,6 +54,7 @@ jobs:
         env:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SSH_KEY: ${{ secrets.DEPLOY_KEY }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           # the below line gets us locally to the result of the PR merge on the correct ref
