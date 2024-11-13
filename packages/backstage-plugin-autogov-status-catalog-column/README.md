@@ -36,7 +36,7 @@ We welcome contributions to improve this plugin. Please follow our [contributing
 
 ## License
 
-This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the terms of the APACHE-2.0 license. See the [LICENSE](LICENSE) file for details.
 
 ## Support
 
