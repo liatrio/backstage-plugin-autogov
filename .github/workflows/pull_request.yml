@@ -58,4 +58,4 @@ jobs:
         run: |
           # the below line gets us locally to the result of the PR merge on the correct ref
           git checkout -b ${{ github.base_ref }} pull/${{ github.event.number }}/merge
-          unset GITHUB_ACTIONS && npx semantic-release
+          unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci
