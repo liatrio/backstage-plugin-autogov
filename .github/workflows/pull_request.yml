@@ -8,3 +8,54 @@ on:
 jobs:
   code-validation:
     uses: ./.github/workflows/code_validation.yml
+
+  release-dry-run:
+    name: Release Dry Run
+    needs: [code-validation]
+    runs-on: ubuntu-latest
+    concurrency: release
+
+    permissions:
+      id-token: write
+      contents: write
+      issues: write
+      pull-requests: write
+      packages: write
+
+    env:
+      HUSKY: 0
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: |
+          yarn install
+
+      - name: Build Typescript Definitions
+        run: |
+          yarn tsc
+
+      - name: Build
+        run: |
+          yarn build
+
+      - name: Bump and Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SSH_KEY: ${{ secrets.DEPLOY_KEY }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          # the below line gets us locally to the result of the PR merge on the correct ref
+          git checkout -b ${{ github.base_ref }} pull/${{ github.event.number }}/merge
+          unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci
