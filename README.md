@@ -83,16 +83,17 @@ autogov:
       - "component"
     entityTypes:
       - "website"
+      - "service"
     maxReleasesResults: 5
 ```
 
 1. Update GitHub integration if you have one
 
 ```yaml
-  github:
-    - host: github.com # or your github instance
-      apiBaseUrl: https://api.github.com
-      token: ${GITHUB_TOKEN}
+github:
+  - host: github.com # or your github instance
+    apiBaseUrl: https://api.github.com
+    token: ${GITHUB_TOKEN}
 ```
 
 #### Release Card install
@@ -268,7 +269,6 @@ import {
 } from '@liatrio/backstage-plugin-autogov-status-catalog-column';
 import { DefaultFilters } from '@backstage/plugin-catalog-react';
 ```
-
 
 1. Further down, find the following code block and update:
 
