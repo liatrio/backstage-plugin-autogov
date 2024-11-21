@@ -68,6 +68,35 @@ The frontend will display the contents of the results plugin for the AutoGov sta
 
 ### Installation into Backstage
 
+#### Update Configuration
+
+1. Add an autogov config section to your `app-config.yaml`
+
+```yaml
+autogov:
+  github:
+    resultsFile:
+      allowOverride: false
+      default: "results"
+    requireAnnotation: true
+    entityKinds:
+      - "component"
+    entityTypes:
+      - "website"
+    maxReleasesResults: 5
+```
+
+2. Update GitHub integration if you have one
+
+```yaml
+  github:
+    - host: github.com # or your github instance
+      apiBaseUrl: https://api.github.com
+      token: ${GITHUB_TOKEN}
+```
+
+#### Release Card install
+
 1. To install to the Autogov Plugins to the appropriate place, run the following two commands:
 
    ```zsh
@@ -156,7 +185,7 @@ The column will display the contents of the results of the Autogov status (pass/
    ```zsh
    # from root
    yarn --cwd packages/app add @liatrio/backstage-plugin-autogov-status-catalog-column@^1.6.2
-   yarn --cwd @liatrio/backstage-plugin-backend-module-autogov-processor@^1.6.2
+   yarn --cwd packages/backend add @liatrio/backstage-plugin-backend-module-autogov-processor@^1.6.2
    ```
 
 #### Autogov Plug-in Latest Release Autogov Status Catalog Processor
@@ -232,22 +261,6 @@ The following configuration options are available for the the plugins in your `a
 #### `maxReleasesResults` (number)
 
 - Maximum number of releases to show in autogov results. Default is `5`.
-
-## Example Configuration
-
-```yaml
-autogov:
-  github:
-    resultsFile:
-      allowOverride: false
-      default: "results"
-    requireAnnotation: true
-    entityKinds:
-      - "component"
-    entityTypes:
-      - "website"
-    maxReleasesResults: 5
-```
 
 ## Contributing
 
