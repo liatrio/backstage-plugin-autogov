@@ -87,7 +87,9 @@ The frontend will display the contents of the results plugin for the AutoGov sta
        maxReleasesResults: 5
    ```
 
-1. Update GitHub integration if you have one
+   > for configuration explanation and options see [Additional Configuration Options](#additional-configuration-options)
+
+2. Update GitHub integration if you have one
 
    ```yaml
    github:
@@ -315,7 +317,7 @@ The column will display the contents of the results of the Autogov status (pass/
        />
    ```
 
-## Configuration Options
+## Additional Configuration Options
 
 The following configuration options are available for the the plugins in your `app-config.yaml` file:
 
