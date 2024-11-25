@@ -68,34 +68,86 @@ The frontend will display the contents of the results plugin for the AutoGov sta
 
 ### Installation into Backstage
 
+#### Update Configuration
+
+1. Add an autogov config section to your `app-config.yaml`
+
+   ```yaml
+   autogov:
+     github:
+       resultsFile:
+         allowOverride: false
+         default: "results"
+       requireAnnotation: true
+       entityKinds:
+         - "component"
+       entityTypes:
+         - "website"
+         - "service"
+       maxReleasesResults: 5
+   ```
+
+   > for configuration explanation and options see [Additional Configuration Options](#additional-configuration-options)
+
+2. Update GitHub integration if you have one
+
+   ```yaml
+   github:
+     - host: github.com # or your github instance
+       apiBaseUrl: https://api.github.com
+       token: ${GITHUB_TOKEN}
+   ```
+
+#### Release Card install
+
 1. To install to the Autogov Plugins to the appropriate place, run the following two commands:
 
    ```zsh
-   # from root
-   yarn --cwd packages/app add @liatrio/backstage-plugin-autogov-releases-card@^1.6.2
-   yarn --cwd packages/backend add @liatrio/backstage-plugin-autogov-releases-backend@^1.6.2
+     # from root
+     yarn --cwd packages/app add @liatrio/backstage-plugin-autogov-releases-card@^1.6.2
+     yarn --cwd packages/backend add @liatrio/backstage-plugin-autogov-releases-backend@^1.6.2
    ```
 
 #### Autogov Plug-in Release Card Backend
 
 1. Update `packages/backend/src/index.ts` with:
 
-```diff
-+  backend.add(
-+    import('@liatrio/backstage-plugin-autogov-releases-backend'),
-+  );
-backend.start();
-```
+   ➕`diff`
+
+   ```diff
+   +  backend.add(
+   +    import('@liatrio/backstage-plugin-autogov-releases-backend'),
+   +  );
+   backend.start();
+   ```
+
+   📋`copy paste`
+
+   ```.ts
+   backend.add(
+     import('@liatrio/backstage-plugin-autogov-releases-backend'),
+   );
+   ```
 
 #### Autogov Plug-in Release Card Frontend
 
 1. Update `packages/app/src/components/catalog/EntityPage.tsx` with:
 
+   ➕`diff`
+
    ```diff
-   + import { AutogovReleasesCard } from '@liatrio/backstage-plugin-autogov-releases-card';
+     + import { AutogovReleasesCard } from '@liatrio/backstage-plugin-autogov-releases-card';
+   ```
+
+   📋`copy paste`
+
+   ```.tsx
+   import { AutogovReleasesCard } from '@liatrio/backstage-plugin-autogov-releases-card';
    ```
 
 1. Further down, find the following block of code:
+
+   ➕`diff`
 
    ```diff
    const overviewContent = (
@@ -127,6 +179,20 @@ backend.start();
    );
    ```
 
+   📋`copy paste`
+
+   ```.tsx
+
+       <EntitySwitch>
+         <EntitySwitch.Case
+           if={isKind('component') && isComponentType(['website', 'service'])}>
+           <Grid item md={8} xs={12}>
+             <AutogovReleasesCard />
+           </Grid>
+         </EntitySwitch.Case>
+       </EntitySwitch>
+   ```
+
 ## Autogov Releases and Autogov Status Column and Processor Plug-in
 
 ### Plugin Architecture
@@ -156,57 +222,102 @@ The column will display the contents of the results of the Autogov status (pass/
    ```zsh
    # from root
    yarn --cwd packages/app add @liatrio/backstage-plugin-autogov-status-catalog-column@^1.6.2
-   yarn --cwd @liatrio/backstage-plugin-backend-module-autogov-processor@^1.6.2
+   yarn --cwd packages/backend add @liatrio/backstage-plugin-backend-module-autogov-processor@^1.6.2
    ```
 
 #### Autogov Plug-in Latest Release Autogov Status Catalog Processor
 
 1. Update `packages/backend/src/index.ts` with:
 
-```diff
-+  backend.add(
-+    import('@liatrio/backstage-plugin-backend-module-autogov-processor'),
-+  );
-backend.start();
-```
+   ➕`diff`
+
+   ```diff
+   +  backend.add(
+   +    import('@liatrio/backstage-plugin-backend-module-autogov-processor'),
+   +  );
+   backend.start();
+   ```
+
+   📋`copy paste`
+
+   ```.ts
+   backend.add(
+     import('@liatrio/backstage-plugin-backend-module-autogov-processor'),
+   );
+   ```
 
 #### Autogov Plug-in Latest Release Autogov Status Catalog Column
 
-1. Update `packages/app/App.tsx`:
+1. Update `packages/app/src/App.tsx`:
 
-```diff
-+  import {
-+    defaultColumnsWithAutogovStatusRightOf,
-+    AutogovLatestReleaseStatusPicker,
-+  } from '@liatrio/backstage-plugin-autogov-status-catalog-column';
-+  import { DefaultFilters } from '@backstage/plugin-catalog-react';
+   ➕`diff`
 
-const app = createApp({
-```
+   ```diff
+   +  import {
+   +    defaultColumnsWithAutogovStatusRightOf,
+   +    AutogovLatestReleaseStatusPicker,
+   +  } from '@liatrio/backstage-plugin-autogov-status-catalog-column';
+   +  import { DefaultFilters } from '@backstage/plugin-catalog-react';
+
+   const app = createApp({
+   ```
+
+   📋`copy paste`
+
+   ```.tsx
+   import {
+     defaultColumnsWithAutogovStatusRightOf,
+     AutogovLatestReleaseStatusPicker,
+   } from '@liatrio/backstage-plugin-autogov-status-catalog-column';
+   import { DefaultFilters } from '@backstage/plugin-catalog-react';
+   ```
 
 1. Further down, find the following code block and update:
 
-```diff
--      <Route path="/catalog" element={<CatalogIndexPage />} />
-+      <Route
-+        path="/catalog"
-+        element={
-+          <CatalogIndexPage
-+            columns={context =>
-+              defaultColumnsWithAutogovStatusRightOf('Description', context)
-+            }
-+            filters={
-+              <>
-+                <DefaultFilters />
-+                <AutogovLatestReleaseStatusPicker />
-+              </>
-+            }
-+          />
-+        }
-+      />
-```
+   ➕`diff`
 
-## Configuration Options
+   ```diff
+   -      <Route path="/catalog" element={<CatalogIndexPage />} />
+   +      <Route
+   +        path="/catalog"
+   +        element={
+   +          <CatalogIndexPage
+   +            columns={context =>
+   +              defaultColumnsWithAutogovStatusRightOf('Description', context)
+   +            }
+   +            filters={
+   +              <>
+   +                <DefaultFilters />
+   +                <AutogovLatestReleaseStatusPicker />
+   +              </>
+   +            }
+   +          />
+   +        }
+   +      />
+   ```
+
+   📋`copy paste`
+
+   ```.tsx
+       <Route
+         path="/catalog"
+         element={
+           <CatalogIndexPage
+             columns={context =>
+               defaultColumnsWithAutogovStatusRightOf('Description', context)
+             }
+             filters={
+               <>
+                 <DefaultFilters />
+                 <AutogovLatestReleaseStatusPicker />
+               </>
+             }
+           />
+         }
+       />
+   ```
+
+## Additional Configuration Options
 
 The following configuration options are available for the the plugins in your `app-config.yaml` file:
 
@@ -232,22 +343,6 @@ The following configuration options are available for the the plugins in your `a
 #### `maxReleasesResults` (number)
 
 - Maximum number of releases to show in autogov results. Default is `5`.
-
-## Example Configuration
-
-```yaml
-autogov:
-  github:
-    resultsFile:
-      allowOverride: false
-      default: "results"
-    requireAnnotation: true
-    entityKinds:
-      - "component"
-    entityTypes:
-      - "website"
-    maxReleasesResults: 5
-```
 
 ## Contributing
 
