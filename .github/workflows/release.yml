@@ -55,7 +55,7 @@ jobs:
         id: octo-sts
         with:
           scope: liatrio/backstage-plugin-autogov
-          identity: semantic-release
+          identity: main-semantic-release
 
       - name: Bump and Release
         env:
