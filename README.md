@@ -347,3 +347,4 @@ The following configuration options are available for the the plugins in your `a
 ## Contributing
 
 See [Contributing](./CONTRIBUTING) to Backstage GitHub Releases Autogov Plugin
+
