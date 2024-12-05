@@ -17,10 +17,10 @@ jobs:
 
     permissions:
       id-token: write
-      contents: write
-      issues: write
-      pull-requests: write
-      packages: write
+      contents: read
+      issues: read
+      pull-requests: read
+      packages: read
 
     env:
       HUSKY: 0
