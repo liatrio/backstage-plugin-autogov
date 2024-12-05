@@ -17,10 +17,10 @@ jobs:
 
     permissions:
       id-token: write
-      contents: write
-      issues: write
-      pull-requests: write
-      packages: write
+      contents: read
+      issues: read
+      pull-requests: read
+      packages: read
 
     env:
       HUSKY: 0
@@ -50,15 +50,9 @@ jobs:
         run: |
           yarn build
 
-      - uses: octo-sts/action@6177b4481c00308b3839969c3eca88c96a91775f #v1.0.0
-        id: octo-sts
-        with:
-          scope: liatrio/backstage-plugin-autogov
-          identity: semantic-release
-
       - name: Bump and Release
         env:
-          GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SSH_KEY: ${{ secrets.DEPLOY_KEY }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |

@@ -17,13 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: release
 
-    permissions:
-      id-token: write
-      contents: write
-      issues: write
-      pull-requests: write
-      packages: write
-
     env:
       HUSKY: 0
 
