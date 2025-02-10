@@ -51,6 +51,6 @@ jobs:
 
       - name: Bump and Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMVER_RELEASE }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: unset GITHUB_ACTIONS && npx semantic-release

@@ -51,7 +51,7 @@ jobs:
 
       - name: Bump and Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMVER_RELEASE }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           # the below line gets us locally to the result of the PR merge on the correct ref
