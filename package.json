@@ -40,7 +40,7 @@
     "dist-types/*/dist",
     "LICENSE"
   ],
-  "packageManager": "yarn@4.4.1",
+  "packageManager": "yarn@4.6.0",
   "configSchema": {
     "$schema": "https://backstage.io/schema/config-v1",
     "title": "@liatrio/backend-module-autogov-processor",
