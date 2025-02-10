@@ -22,7 +22,9 @@
    ## or run
    yarn --cwd packages/backend <local-path-to-repo>backstage-plugin-autogov/backstage-plugin-github-releases-autogov/liatrio-backstage-plugin-github-releases-assets-backend/package.tgz
    ```
+
 1. Add the plugin to the frontend component
+
    ```packages/app/src/components/catalog/EntityPage.tsx
    import { GithubReleasesAutogovPage } from 'backstage-plugin-github-releases-autogov';
    ...
