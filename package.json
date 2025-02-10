@@ -7,7 +7,7 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@backstage/cli": "^0.27.1",
+    "@backstage/cli": "^0.29.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^10.0.4",
     "@semantic-release/git": "^10.0.1",
