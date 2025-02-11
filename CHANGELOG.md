@@ -1,3 +1,18 @@
+## [1.6.3](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.6.2...v1.6.3) (2025-02-11)
+
+### Bug Fixes
+
+* **deps:** replace dependency @material-ui/core with @mui/material ^5.0.0 ([#25](https://github.com/liatrio/backstage-plugin-autogov/issues/25)) ([2b1d627](https://github.com/liatrio/backstage-plugin-autogov/commit/2b1d6270a22316ab3e39275801e35319d5cc55cb))
+* **deps:** replace dependency @material-ui/core with @mui/material ^5.0.0 ([#53](https://github.com/liatrio/backstage-plugin-autogov/issues/53)) ([b27c633](https://github.com/liatrio/backstage-plugin-autogov/commit/b27c63370df6e2662eaa8ab75328744a73d9c5c7))
+* **deps:** replace dependency @material-ui/icons with @mui/icons-material ^5.0.0 ([#26](https://github.com/liatrio/backstage-plugin-autogov/issues/26)) ([bc5b13c](https://github.com/liatrio/backstage-plugin-autogov/commit/bc5b13c2b07d32c91c2dd15a7000d8a51b9e1ccb))
+* **deps:** replace dependency @material-ui/icons with @mui/icons-material ^5.0.0 ([#54](https://github.com/liatrio/backstage-plugin-autogov/issues/54)) ([8560d0d](https://github.com/liatrio/backstage-plugin-autogov/commit/8560d0d1613da00f3a3a6360171f9e8ab9eee99e))
+* **deps:** update backstage monorepo ([#32](https://github.com/liatrio/backstage-plugin-autogov/issues/32)) ([d30ec26](https://github.com/liatrio/backstage-plugin-autogov/commit/d30ec26f7c90f3880efc1f5c65a437879556a2fa))
+* **deps:** update dependency @backstage/theme to v0.6.3 ([#51](https://github.com/liatrio/backstage-plugin-autogov/issues/51)) ([5fd79ea](https://github.com/liatrio/backstage-plugin-autogov/commit/5fd79ea98b1709a2aa3daed6ee8f5ba6c0b14b16))
+* **deps:** update dependency express to v4.21.2 ([#52](https://github.com/liatrio/backstage-plugin-autogov/issues/52)) ([bef69aa](https://github.com/liatrio/backstage-plugin-autogov/commit/bef69aa6b065aeadec15bc5efbda6df059cc5d08))
+* **deps:** update dependency node-fetch to v2.7.0 ([#37](https://github.com/liatrio/backstage-plugin-autogov/issues/37)) ([44dec2d](https://github.com/liatrio/backstage-plugin-autogov/commit/44dec2df372451067d76d7540a60d203a1a8ee82))
+* **deps:** update dependency styled-components to v6.1.15 ([#55](https://github.com/liatrio/backstage-plugin-autogov/issues/55)) ([4bfe638](https://github.com/liatrio/backstage-plugin-autogov/commit/4bfe6384f226a41bb957320518f725cbeebdefd5))
+* remove unneeded MSW dep ([#31](https://github.com/liatrio/backstage-plugin-autogov/issues/31)) ([87791de](https://github.com/liatrio/backstage-plugin-autogov/commit/87791dee32eeb70e03c7a395c3358b8f4407cd75))
+
 ## [1.6.2](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.6.1...v1.6.2) (2024-11-09)
 
 ### Bug Fixes
