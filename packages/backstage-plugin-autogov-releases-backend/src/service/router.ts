@@ -269,7 +269,9 @@ export async function createRouter(
           let autogovStatus = undefined;
           let autogovFailedPolicies = undefined;
           const autogovAsset = release?.assets?.find((asset: any) => {
-            return asset.name === resultsFile;
+            // Match base name followed by optional -PASSED or -FAILED
+            const pattern = new RegExp(`^${resultsFile}(-PASSED|-FAILED)?$`);
+            return pattern.test(asset.name);
           });
           if (autogovAsset) {
             const resultsFileContentResponse = await fetch(autogovAsset.url, {
