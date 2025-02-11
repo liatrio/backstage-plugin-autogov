@@ -1,3 +1,9 @@
+## [1.6.4](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.6.3...v1.6.4) (2025-02-11)
+
+### Bug Fixes
+
+* allow results file suffixes ([#67](https://github.com/liatrio/backstage-plugin-autogov/issues/67)) ([7c6f8e4](https://github.com/liatrio/backstage-plugin-autogov/commit/7c6f8e4c6adc1465e90c9c1adc2f44610e171bd4))
+
 ## [1.6.3](https://github.com/liatrio/backstage-plugin-autogov/compare/v1.6.2...v1.6.3) (2025-02-11)
 
 ### Bug Fixes
